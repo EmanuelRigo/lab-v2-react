@@ -1,14 +1,26 @@
 import React from "react";
 import Navbar from "./components/LandingPageComponents/Navbar";
 import ContactForm from "./components/LandingPageComponents/ContactForm";
+import Carousel from "./components/LandingPageComponents/Carousel";
+import Footer from "./components/LandingPageComponents/Footer";
 
-const page = () => {
+const Page = () => {
   return (
-    <div>
-      <Navbar></Navbar>
-      <ContactForm></ContactForm>
+    <div className="flex flex-col min-h-screen">
+      <header className="w-full">
+        <Navbar />
+      </header>
+      <main className="flex-grow">
+        <div className="">
+          <ContactForm />
+          <Carousel />
+        </div>
+      </main>
+      <footer className="w-full">
+        <Footer />
+      </footer>
     </div>
   );
 };
 
-export default page;
+export default Page;
