@@ -1,21 +1,32 @@
 "use client"
 
 import React, { useState, useEffect } from 'react';
+import CarouselItem from './CarouselItem';
 
 const Carousel = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const images = [
-    'https://via.placeholder.com/800x400?text=Slide+1',
-    'https://via.placeholder.com/800x400?text=Slide+2',
-    'https://via.placeholder.com/800x400?text=Slide+3',
+  
+  const items = [
+    {
+      image: '/image1.jpg',
+      caption: 'Esta es la leyenda para la imagen 1',
+    },
+    {
+      image: '/image2.avif',
+      caption: 'Esta es la leyenda para la imagen 2',
+    },
+    {
+      image: '/image3.jpg',
+      caption: 'Esta es la leyenda para la imagen 3',
+    },
   ];
 
   const prevSlide = () => {
-    setCurrentIndex((prevIndex) => (prevIndex === 0 ? images.length - 1 : prevIndex - 1));
+    setCurrentIndex((prevIndex) => (prevIndex === 0 ? items.length - 1 : prevIndex - 1));
   };
 
   const nextSlide = () => {
-    setCurrentIndex((prevIndex) => (prevIndex === images.length - 1 ? 0 : prevIndex + 1));
+    setCurrentIndex((prevIndex) => (prevIndex === items.length - 1 ? 0 : prevIndex + 1));
   };
 
   useEffect(() => {
@@ -28,14 +39,14 @@ const Carousel = () => {
   return (
     <div className="relative w-full h-96 mx-auto">
       <div className="overflow-hidden relative w-full h-full">
-        {images.map((image, index) => (
+        {items.map((item, index) => (
           <div
             key={index}
             className={`absolute inset-0 transition-transform duration-500 ease-in-out transform ${
               index === currentIndex ? 'translate-x-0' : 'translate-x-full'
             }`}
           >
-            <img src={image} alt={`Slide ${index + 1}`} className="w-full h-full object-cover" />
+            <CarouselItem image={item.image} caption={item.caption} />
           </div>
         ))}
       </div>
