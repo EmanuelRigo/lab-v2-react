@@ -1,5 +1,6 @@
 "use client";
 import React from "react";
+import Link from "next/link";
 
 const Footer = () => {
   return (
@@ -11,9 +12,10 @@ const Footer = () => {
             <p className="text-gray-100">© 2023 Todos los derechos reservados.</p>
           </div>
           <div className="flex space-x-4">
-            <a href="#" className="text-teal-600 hover:text-teal-700 transition-colors duration-200">Facebook</a>
-            <a href="#" className="text-teal-600 hover:text-teal-700 transition-colors duration-200">Twitter</a>
-            <a href="#" className="text-teal-600 hover:text-teal-700 transition-colors duration-200">Instagram</a>
+            <a href="#" className="text-white hover:text-teal-900 transition-colors duration-200">Facebook</a>
+            <a href="#" className="text-white hover:text-teal-900 transition-colors duration-200">Twitter</a>
+            <a href="#" className="text-white hover:text-teal-900 transition-colors duration-200">Instagram</a>
+            <Link className="text-white hover:text-teal-900 transition-colors duration-200" href={"*"}>Acceso para personal</Link>
           </div>
         </div>
       </div>
