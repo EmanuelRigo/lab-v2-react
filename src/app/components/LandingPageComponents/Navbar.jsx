@@ -32,7 +32,7 @@ const Navbar = () => {
             href="/"
             className="text-gray-600 hover:text-teal-500 transition-colors duration-200"
           >
-            Inicio
+            Inicio de la pagina
           </Link>
           <Link
             href="/contacto"
