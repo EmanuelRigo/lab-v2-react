@@ -1,16 +1,16 @@
 "use client";
 
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
 const Formulario = () => {
   const [formData, setFormData] = useState({
-    nombre: '',
-    apellido: '',
-    dni: '',
-    tel: '',
-    genero: '',
-    edad: '',
-    direccion: '',
+    nombre: "",
+    apellido: "",
+    dni: "",
+    tel: "",
+    genero: "",
+    edad: "",
+    direccion: "",
   });
 
   const handleChange = (e) => {
@@ -115,7 +115,7 @@ const Formulario = () => {
         <div className="text-right">
           <button
             type="submit"
-            className="bg-teal-600 text-white px-4 py-2 rounded hover:bg-teal-700 transition-colors duration-200"
+            className="bg-sky-600 text-white px-4 py-2 rounded hover:bg-sky-700 transition-colors duration-200"
           >
             Enviar
           </button>

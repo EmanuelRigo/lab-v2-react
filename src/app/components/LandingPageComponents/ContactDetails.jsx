@@ -17,7 +17,7 @@ const ContactDetails = () => {
           />
         </div>
         <div>
-          <h2 className="text-2xl font-bold text-teal-600">
+          <h2 className="text-2xl font-bold text-sky-600">
             Diagnóstico Ficticio Integral
           </h2>
           <p className="mt-2 text-gray-600">
@@ -26,7 +26,7 @@ const ContactDetails = () => {
           </p>
 
           <div className="mt-4">
-            <h3 className="text-xl font-semibold text-teal-600">
+            <h3 className="text-xl font-semibold text-sky-600">
               Sede Ficticia 1
             </h3>
             <p className="mt-1 text-gray-600">Calle Ficticia 1234</p>
@@ -52,7 +52,7 @@ const ContactDetails = () => {
           </div>
 
           <div className="mt-6">
-            <h3 className="text-xl font-semibold text-teal-600">
+            <h3 className="text-xl font-semibold text-sky-600">
               Sede Ficticia 2
             </h3>
             <p className="mt-1 text-gray-600">Avenida Ficticia 5678</p>
@@ -78,7 +78,7 @@ const ContactDetails = () => {
           </div>
 
           <div className="mt-6 flex justify-start">
-            <button className="px-4 py-2 bg-teal-600 text-white rounded-lg">
+            <button className="px-4 py-2 bg-sky-600 text-white rounded-lg">
               NUESTROS SERVICIOS FICTICIOS
             </button>
           </div>
