@@ -9,7 +9,7 @@ const Formulario = () => {
     dni: "",
     tel: "",
     genero: "",
-    edad: "",
+    fechaNacimiento: "",
     direccion: "",
   });
 
@@ -24,7 +24,7 @@ const Formulario = () => {
   };
 
   return (
-    <div className="max-w-4xl mx-auto p-6 bg-white shadow-md rounded">
+    <div className=" mx-auto p-6 bg-white shadow-md rounded"> {/* Ajusta el ancho del formulario */}
       <h2 className="text-2xl font-bold mb-6">Formulario de Registro</h2>
       <form onSubmit={handleSubmit} className="space-y-6">
         <div className="flex space-x-6">
@@ -102,11 +102,11 @@ const Formulario = () => {
           </select>
         </div>
         <div>
-          <label className="block text-gray-700">Edad</label>
+          <label className="block text-gray-700">Fecha de Nacimiento</label>
           <input
-            type="number"
-            name="edad"
-            value={formData.edad}
+            type="date"
+            name="fechaNacimiento"
+            value={formData.fechaNacimiento}
             onChange={handleChange}
             className="w-full p-2 border border-gray-300 rounded"
             required
