@@ -9,14 +9,20 @@ const Carousel = () => {
   const items = [
     {
       image: '/image1.jpg',
+      title: 'Título 1',
+      description: 'Esta es la descripción para la imagen 1',
       caption: 'Esta es la leyenda para la imagen 1',
     },
     {
       image: '/image2.avif',
+      title: 'Título 2',
+      description: 'Esta es la descripción para la imagen 2',
       caption: 'Esta es la leyenda para la imagen 2',
     },
     {
       image: '/image3.jpg',
+      title: 'Título 3',
+      description: 'Esta es la descripción para la imagen 3',
       caption: 'Esta es la leyenda para la imagen 3',
     },
   ];
@@ -37,7 +43,7 @@ const Carousel = () => {
   }, [currentIndex]);
 
   return (
-    <div className="relative w-full h-96 mx-auto">
+    <div className="relative w-full h-[50vh] mx-auto">
       <div className="overflow-hidden relative w-full h-full">
         {items.map((item, index) => (
           <div
@@ -46,7 +52,12 @@ const Carousel = () => {
               index === currentIndex ? 'translate-x-0' : 'translate-x-full'
             }`}
           >
-            <CarouselItem image={item.image} caption={item.caption} />
+            <CarouselItem 
+              image={item.image} 
+              title={item.title} 
+              description={item.description} 
+              caption={item.caption} 
+            />
           </div>
         ))}
       </div>
@@ -58,7 +69,7 @@ const Carousel = () => {
       </button>
       <button
         onClick={nextSlide}
-        className="absolute top-1/2 right-0 transform -translate-y-1/2  text-gray-700 p-2 rounded-full"
+        className="absolute top-1/2 right-0 transform -translate-y-1/2 text-gray-700 p-2 rounded-full"
       >
         &#10095;
       </button>

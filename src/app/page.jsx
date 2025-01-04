@@ -12,7 +12,7 @@ const Page = () => {
       </header>
       <main className="flex-grow">
         <div className="">
-          <ContactForm />
+          {/* <ContactForm /> */}
           <Carousel />
         </div>
       </main>
