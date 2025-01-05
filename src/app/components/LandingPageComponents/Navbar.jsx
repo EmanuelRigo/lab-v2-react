@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import Link from "next/link";
-import { FaUserLock } from "react-icons/fa";
+import { FaUserLock, FaMapMarkerAlt, FaFacebook, FaInstagram } from "react-icons/fa";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -11,16 +11,27 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="bg-white shadow-lg">
-      <div className="bg-sky-600 text-white py-2">
-        <div className="container mx-auto px-4 flex justify-end items-center space-x-4">
-          <div>
-            <span className="mr-4">Tel: (123) 4456-7890</span>
-            <span>Email: info@example.com</span>
+    <nav className="bg-white">
+      <div className="bg-sky-600 text-white py-3">
+        <div className="container-fluid mx-auto px-4 flex justify-between space-x-4">
+          <div className="flex px-8">
+            <div className="pl-3 flex items-center ">
+              <FaMapMarkerAlt />
+              <span className="px-1"><p className="border-b border-sky-600 hover:border-white">Palermo</p> </span>
+            </div>
+            <div className="px-3 flex items-center ">
+              <FaMapMarkerAlt />
+              <span className="px-1 "> <p className="border-b border-sky-600 hover:border-white">San telmo</p></span>
+            </div>
+          </div>
+          <div className="flex items-center px-8">
+            <div className="px-2 mx-1 border border-sky-600 bg-sky-500 py-2"><FaFacebook className="text-white hover:text-black"/></div>
+       
+            <div className="px-2 border border-sky-600 bg-sky-500 py-2"><FaInstagram className="text-white hover:text-black" /></div>
           </div>
         </div>
       </div>
-      <div className="container mx-auto px-4 py-3 flex justify-between items-center">
+      <div className="container-fluid mx-auto px-4 py-8 flex justify-between items-center">
         {/* Logo */}
         <Link href="/" className="text-sky-600 text-2xl font-bold">
           LabClinico
@@ -67,4 +78,5 @@ const Navbar = () => {
     </nav>
   );
 };
+
 export default Navbar;
