@@ -24,8 +24,7 @@ const Formulario = () => {
   };
 
   return (
-    <div className=" mx-auto p-6 bg-white shadow-md rounded"> {/* Ajusta el ancho del formulario */}
-      <h2 className="text-2xl font-bold mb-6">Formulario de Registro</h2>
+    <div className="mx-auto p-6 bg-white shadow-md "> 
       <form onSubmit={handleSubmit} className="space-y-6">
         <div className="flex space-x-6">
           <div className="w-1/2">

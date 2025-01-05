@@ -4,11 +4,22 @@ import FormPatient from "../components/PersonalPageComponents/FormPatient";
 
 const Page = () => {
   return (
-    <div className="flex h-screen justify-between">
-      <Aside></Aside>
-      <main className="p-4 bg-sky-700 ">
-        <FormPatient></FormPatient>
-      </main>
+    <div
+      className="flex h-screen"
+      style={{
+        backgroundImage: "url('/image4.jpg')",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+      }}
+    >
+   
+      <div className="relative flex-grow flex items-center justify-start">
+        <main className="relative flex z-10 bg-opacity-70 shadow-md h-full" >   
+          <div className="flex items-center bg-white">     <FormPatient /></div>
+     
+          <Aside />
+        </main>
+      </div>
     </div>
   );
 };
