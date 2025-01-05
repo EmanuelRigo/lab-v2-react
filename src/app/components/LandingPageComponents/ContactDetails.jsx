@@ -3,7 +3,7 @@ import Image from "next/image";
 
 const ContactDetails = () => {
   return (
-    <div className="p-6 bg-white shadow-md rounded-lg">
+    <div className="p-6 bg-white rounded-lg">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         {" "}
         {/* Una columna en pantallas pequeñas, dos en medianas */}
