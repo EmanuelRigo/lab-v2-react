@@ -1,6 +1,8 @@
 "use client"
 
 import React, { useState } from 'react';
+import Link from 'next/link';
+import AnalysisItem from './AnalysisItem';
 
 const analyses = [
   'Análisis 1', 'Análisis 2', 'Análisis 3', 'Análisis 4', 'Análisis 5',
@@ -21,20 +23,31 @@ const ClinicalAnalysis = () => {
   };
 
   return (
-    <div className="p-4">
+    <div className="w-full mx-auto p-4 h-5/6 flex flex-col">
       <h2 className="text-2xl font-bold mb-4">Análisis Clínicos</h2>
-      <div className="grid grid-cols-2 gap-4">
-        {analyses.map((analysis) => (
-          <div
-            key={analysis}
-            className={`p-2 border rounded cursor-pointer ${
-              selectedAnalyses.includes(analysis) ? 'bg-green-200' : 'bg-white'
-            }`}
-            onClick={() => toggleAnalysis(analysis)}
-          >
-            {analysis}
+      <div className="h-5/6 flex flex-col">
+        <div className="space-y-4 flex-grow overflow-y-auto scrollbar-hide"> {/* Añade la clase personalizada */}
+          <div className="space-y-4">
+            {analyses.map((analysis) => (
+              <AnalysisItem
+                key={analysis}
+                analysis={analysis}
+                isSelected={selectedAnalyses.includes(analysis)}
+                onToggle={() => toggleAnalysis(analysis)}
+              />
+            ))}
           </div>
-        ))}
+        </div>
+        <div className="mt-4 flex justify-between">
+          <Link href="/personal-page" className="bg-gray-600 text-white px-4 py-2 rounded hover:bg-gray-700 transition-colors duration-200">
+            
+              Volver
+          
+          </Link>
+          <Link href={"?section=clinical-result"} className="bg-sky-600 text-white px-4 py-2 rounded hover:bg-sky-700 transition-colors duration-200">
+            Siguiente
+          </Link>
+        </div>
       </div>
     </div>
   );

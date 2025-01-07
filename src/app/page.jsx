@@ -1,25 +1,31 @@
+"use client";
 import React from "react";
+import { useSearchParams } from "next/navigation";
 import Navbar from "./components/LandingPageComponents/Navbar";
-import ContactForm from "./components/LandingPageComponents/ContactForm";
-import Carousel from "./components/LandingPageComponents/Carousel";
-import Footer from "./components/LandingPageComponents/Footer";
 import SocialFooter from "./components/LandingPageComponents/SocialFooter";
-import ContactDetails from "./components/LandingPageComponents/ContactDetails";
+import Footer from "./components/LandingPageComponents/Footer";
+import Main from "./components/LandingPageComponents/Main";
+import Services from "./components/LandingPageComponents/Services";
 
 const Page = () => {
+  const searchParams = useSearchParams();
+  const page = searchParams.get("page");
+  console.log(page);
+
   return (
     <div className="flex flex-col min-h-screen items-center">
       <header className="w-full">
         <Navbar />
       </header>
-      <main className="flex-grow w-full flex flex-col items-center">
-        <Carousel />
-        <div className="container flex justify-center">
-          <ContactDetails></ContactDetails>
-        </div>
-      </main>
+      {page === null ? (
+        <Main />
+      ) : page === "services" ? (
+        <Services />
+      ) : (
+        <div>No se encontró la página solicitada.</div>
+      )}
       <footer className="w-full">
-        <SocialFooter></SocialFooter>
+        <SocialFooter />
         <Footer />
       </footer>
     </div>

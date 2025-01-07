@@ -34,7 +34,7 @@ const Footer = () => {
             </a>
             <Link
               className="text-white hover:text-sky-900 transition-colors duration-200"
-              href={"/personal"}
+              href={"/personal-page"}
             >
               Acceso para personal
             </Link>

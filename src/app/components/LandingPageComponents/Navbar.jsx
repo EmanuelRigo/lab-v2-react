@@ -1,10 +1,17 @@
 "use client";
 import { useState } from "react";
 import Link from "next/link";
-import { FaUserLock, FaMapMarkerAlt, FaFacebook, FaInstagram } from "react-icons/fa";
+import {
+  FaUserLock,
+  FaMapMarkerAlt,
+  FaFacebook,
+  FaInstagram,
+} from "react-icons/fa";
+import { usePathname } from "next/navigation";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const pathname = usePathname();
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -13,48 +20,54 @@ const Navbar = () => {
   return (
     <>
       <nav className="bg-white fixed top-0 w-full z-50 shadow-md ">
-        <div className="bg-sky-600 text-white py-1 ">
-          <div className="container-fluid mx-auto px-4 flex justify-between space-x-4">
-            <div className="flex px-8">
-              <div className="pl-3 flex items-center">
+        <div className="bg-sky-600 text-white py-3 ">
+          <div className="container-fluid mx-auto flex justify-between space-x-4">
+            <div className="flex px-4">
+              <div className="flex items-center">
                 <FaMapMarkerAlt />
                 <span className="px-1">
-                  <p className="border-b border-sky-600 hover:border-white">Palermo</p>
+                  <p className="border-b border-sky-600 hover:border-white">
+                    Palermo
+                  </p>
                 </span>
               </div>
               <div className="px-3 flex items-center">
                 <FaMapMarkerAlt />
                 <span className="px-1">
-                  <p className="border-b border-sky-600 hover:border-white">San telmo</p>
+                  <p className="border-b border-sky-600 hover:border-white">
+                    San telmo
+                  </p>
                 </span>
               </div>
             </div>
-            <div className="flex items-center px-8">
-              <div className="px-2 mx-1 border border-sky-600 bg-sky-500 py-2">
-                <FaFacebook className="text-white hover:text-black transition-colors duration-300" />
+            <div className="flex items-center pe-4">
+              <div className="px-2 mx-1 border border-sky-500 transition-colors duration-300 bg-sky-500 hover:bg-sky-700  py-2">
+                <FaFacebook className="text-white " />
               </div>
-              <div className="px-2 border border-sky-600 bg-sky-500 py-2">
-                <FaInstagram className="text-white hover:text-black transition-colors duration-300" />
+              <div className="px-2 border border-sky-500 hover:bg-sky-700  bg-sky-500  transition-colors duration-300 py-2">
+                <FaInstagram className="text-white transition-colors duration-300" />
               </div>
             </div>
           </div>
         </div>
-        <div className="container-fluid mx-auto pl-4 flex justify-between items-center">
+        <div className="container-fluid h-28 mx-auto flex justify-between items-center">
           {/* Logo */}
-          <Link href="/" className="text-sky-600 text-2xl font-bold">
+          <Link href="/" className="text-sky-600 text-2xl font-bold ml-4">
             LabClinico
           </Link>
 
           {/* Links */}
-          <div className="hidden md:flex space-x-6 items-center">
+          <div className="hidden md:flex h-full space-x-6  items-center">
             <Link
               href="/"
-              className="text-gray-600 hover:text-sky-500 transition-colors duration-200"
+              className={`text-gray-600 hover:text-sky-500 transition-colors duration-200 ${
+                pathname === "/" ? "text-blue-500" : ""
+              }`}
             >
               Home
             </Link>
             <Link
-              href="/contacto"
+              href="?page=services"
               className="text-gray-600 hover:text-sky-500 transition-colors duration-200"
             >
               Servicios
@@ -73,7 +86,7 @@ const Navbar = () => {
             </Link>
             <Link
               href="/quienes-somos"
-              className="flex text-white hover:bg-sky-700 hover:text-white transition-colors duration-100 bg-sky-500 h-[80px] ml-auto items-center px-4"
+              className="flex text-white hover:bg-sky-700 hover:text-white transition-colors duration-100 bg-sky-500 h-full ml-auto items-center px-4"
             >
               Envia tu orden
             </Link>
@@ -90,7 +103,9 @@ const Navbar = () => {
           </div>
         </div>
       </nav>
-      <div className="pt-20"> {/* Ajusta el padding-top según la altura del nav */}
+      <div className="pt-44">
+        {" "}
+        {/* Ajusta el padding-top según la altura del nav */}
         {/* Aquí va el contenido principal de la página, como el carrusel */}
       </div>
     </>
