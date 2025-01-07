@@ -15,24 +15,24 @@ const Aside = () => {
      text-white h-full transition-all duration-300 w-16 hover:w-52 flex flex-col items-start justify-between overflow-hidden"
     >
       <div className="flex flex-col  w-40">
-        <div className="flex items-center my-1 space-x-2 hover:outline  hover:bg-white ps-5 py-2 w-full rounded-e group">
+        <Link href={"/personal-page/pacients"} className="flex items-center my-1 space-x-2 hover:outline  hover:bg-white ps-5 py-2 w-full rounded-e group">
           <FaUser className="text-2xl me-4 group-hover:text-sky-700" />
           <p className="text-white transition-all duration-300 group-hover:text-sky-700">
             Pacientes
           </p>
-        </div>
-        <div className="flex items-center my-1 space-x-2 hover:outline  hover:bg-white ps-5 py-2 w-full rounded-e group">
+        </Link>
+        <Link href={"/personal-page/locations"}  className="flex items-center my-1 space-x-2 hover:outline  hover:bg-white ps-5 py-2 w-full rounded-e group">
           <FaClinicMedical className="text-2xl me-4 group-hover:text-sky-700" />
           <p className="text-white transition-all duration-300 group-hover:text-sky-700">
             Sucursales
           </p>
-        </div>
-        <div className="flex items-center my-1 space-x-2 hover:outline  hover:bg-white ps-5 py-2 w-full rounded-e group">
+        </Link>
+        <Link href={"/personal-page/analysis"}  className="flex items-center my-1 space-x-2 hover:outline  hover:bg-white ps-5 py-2 w-full rounded-e group">
           <FaVials className="text-2xl me-4 group-hover:text-sky-700" />
           <p className="text-white transition-all duration-300 group-hover:text-sky-700">
             Análisis
           </p>
-        </div>
+        </Link>
       </div>
       <div className="flex flex-col  w-40">
         <Link
