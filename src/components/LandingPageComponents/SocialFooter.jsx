@@ -5,7 +5,7 @@ import Image from "next/image";
 
 const SocialFooter = () => {
   return (
-    <footer className=" text-sky-600 py-8 relative">
+    <footer className=" text-sky-600 w-full py-8 relative">
       <Image
         src="/image4.jpg"
         alt="Fondo"

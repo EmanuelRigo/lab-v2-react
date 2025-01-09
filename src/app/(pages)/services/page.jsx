@@ -6,9 +6,11 @@ import Footer from '@/components/LandingPageComponents/Footer';
 
 const Page = () => {
   return (
-    <div>
+    <div className='flex flex-col min-h-screen w-full items-center'>
       <Navbar />
-      <ServicesComponent />
+
+      <div className='container'>
+      <ServicesComponent /></div>
       <SocialFooter />
       <Footer />
     </div>
