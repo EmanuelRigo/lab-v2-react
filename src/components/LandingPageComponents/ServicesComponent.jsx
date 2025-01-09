@@ -4,7 +4,6 @@ import { FaFlask, FaNotesMedical, FaHome, FaChild } from 'react-icons/fa';
 const ServicesComponent = () => {
   return (
     <div className="py-16 rounded-lg">
-      <h2 className="text-2xl font-bold text-sky-600 mb-4 pb-5">Nuestros Servicios</h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         <div className="text-center">
           <div className="flex items-center justify-center mb-2">

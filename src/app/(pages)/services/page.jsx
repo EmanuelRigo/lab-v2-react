@@ -3,6 +3,7 @@ import Navbar from '@/components/LandingPageComponents/Navbar';
 import ServicesComponent from '@/components/LandingPageComponents/ServicesComponent';
 import SocialFooter from '@/components/LandingPageComponents/SocialFooter';
 import Footer from '@/components/LandingPageComponents/Footer';
+import ServicesInfo from '@/components/LandingPageComponents/ServicesInfo';
 
 const Page = () => {
   return (
@@ -10,7 +11,9 @@ const Page = () => {
       <Navbar />
 
       <div className='container'>
-      <ServicesComponent /></div>
+      <ServicesComponent />
+      <ServicesInfo></ServicesInfo>
+      </div>
       <SocialFooter />
       <Footer />
     </div>

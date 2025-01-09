@@ -6,6 +6,8 @@ import FormPatient from "@/components/PersonalPageComponents/FormPatient";
 import ClinicalAnalysis from "@/components/PersonalPageComponents/ClinicalAnalysis";
 import Results from "@/components/PersonalPageComponents/Results";
 import { useSearchParams } from 'next/navigation';
+import Login from "@/components/PersonalPageComponents/Login";
+import Ticket from "@/components/PersonalPageComponents/Ticket";
 
 const MainPersonal = () => {
   const searchParams = useSearchParams();
@@ -26,7 +28,7 @@ const MainPersonal = () => {
 
           <main className="flex flex-col h-full items-center w-full">
             {showFormPatient ? (
-              <FormPatient />
+              <Ticket/>
             ) : section === 'clinical-analysis' ? (
               <ClinicalAnalysis />
             ) : section === 'clinical-result' ? (
