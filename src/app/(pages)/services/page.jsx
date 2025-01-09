@@ -1,11 +1,18 @@
-import React from 'react'
+import React from 'react';
+import Navbar from '@/components/LandingPageComponents/Navbar';
+import ServicesComponent from '@/components/LandingPageComponents/ServicesComponent';
+import SocialFooter from '@/components/LandingPageComponents/SocialFooter';
+import Footer from '@/components/LandingPageComponents/Footer';
 
-const page = () => {
+const Page = () => {
   return (
     <div>
-      <h2>services</h2>
+      <Navbar />
+      <ServicesComponent />
+      <SocialFooter />
+      <Footer />
     </div>
-  )
+  );
 }
 
-export default page
+export default Page;

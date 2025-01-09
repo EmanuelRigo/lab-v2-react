@@ -62,13 +62,13 @@ const Navbar = () => {
               Servicios
             </Link>
             <Link
-              href="/quienes-somos"
+              href="/coverage"
               className="text-gray-600 hover:text-sky-500 transition-colors duration-200"
             >
               Cobertura
             </Link>
             <Link
-              href="/contacto"
+              href="/contact"
               className="text-gray-600 hover:text-sky-500 transition-colors duration-200"
             >
               Contacto

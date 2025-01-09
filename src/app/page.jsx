@@ -1,16 +1,20 @@
 "use client";
 
 import React from "react";
-import Navbar from "@/components/LandingPageComponents/Navbar";
-import Footer from "@/components/LandingPageComponents/Footer";
-import SocialFooter from "@/components/LandingPageComponents/SocialFooter";
-import Main from "@/components/LandingPageComponents/Main";
-import { usePathname } from 'next/navigation';
+// import Navbar from "@/components/LandingPageComponents/Navbar";
+// import Footer from "@/components/LandingPageComponents/Footer";
+// import SocialFooter from "@/components/LandingPageComponents/SocialFooter";
+// import Main from "@/components/LandingPageComponents/Main";
+
+import Navbar from "../components/LandingPageComponents/Navbar";
+import Footer from "../components/LandingPageComponents/Footer";
+import SocialFooter from "../components/LandingPageComponents/SocialFooter";
+import Main from "../components/LandingPageComponents/Main";
+import { usePathname } from "next/navigation";
 
 const Page = () => {
   const pathname = usePathname();
-  console.log("🚀 ~ Page ~  pathname :",  pathname )
-  
+  console.log("🚀 ~ Page ~  pathname :", pathname);
 
   return (
     <div className="flex flex-col min-h-screen items-center">
