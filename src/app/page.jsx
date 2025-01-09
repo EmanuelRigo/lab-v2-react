@@ -5,7 +5,6 @@ import Navbar from "@/components/LandingPageComponents/Navbar";
 import Footer from "@/components/LandingPageComponents/Footer";
 import SocialFooter from "@/components/LandingPageComponents/SocialFooter";
 import Main from "@/components/LandingPageComponents/Main";
-import Services from "@/components/LandingPageComponents/Services";
 import { usePathname } from 'next/navigation';
 
 const Page = () => {
@@ -18,7 +17,7 @@ const Page = () => {
       <header className="w-full">
         <Navbar />
       </header>
-      {pathname === '/services' ? <Services /> : <Main />}
+      <Main></Main>
       <footer className="w-full">
         <SocialFooter />
         <Footer />
