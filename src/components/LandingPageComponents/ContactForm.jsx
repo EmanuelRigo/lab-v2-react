@@ -53,8 +53,8 @@ const ContactForm = () => {
     <div className="bg-cyan-200 py-6">
       <div className="container mx-auto px-4 flex justify-end">
         {/* Formulario alineado a la derecha */}
-        <div className="bg-white p-6 rounded shadow max-w-md w-full">
-          <h2 className="text-2xl font-bold mb-4 text-center">
+        <div className="bg-white p-6 rounded max-w-md w-full">
+          <h2 className="text-2xl font-bold mb-4 text-center text-sky-600">
             Formulario de Consulta
           </h2>
           <form
@@ -62,7 +62,7 @@ const ContactForm = () => {
             className="grid grid-cols-1 md:grid-cols-2 gap-4"
           >
             <div className="flex flex-col">
-              <label className="mb-2" htmlFor="nombre">
+              <label className="mb-2 text-gray-700" htmlFor="nombre">
                 Nombre
               </label>
               <input
@@ -71,12 +71,12 @@ const ContactForm = () => {
                 name="nombre"
                 value={formData.nombre}
                 onChange={handleChange}
-                className="border border-gray-300 p-2 rounded"
+                className="border border-gray-300 p-2 rounded focus:outline-none focus:ring-2 focus:ring-sky-600"
                 required
               />
             </div>
             <div className="flex flex-col">
-              <label className="mb-2" htmlFor="apellido">
+              <label className="mb-2 text-gray-700" htmlFor="apellido">
                 Apellido
               </label>
               <input
@@ -85,12 +85,12 @@ const ContactForm = () => {
                 name="apellido"
                 value={formData.apellido}
                 onChange={handleChange}
-                className="border border-gray-300 p-2 rounded"
+                className="border border-gray-300 p-2 rounded focus:outline-none focus:ring-2 focus:ring-sky-600"
                 required
               />
             </div>
             <div className="flex flex-col md:col-span-2">
-              <label className="mb-2" htmlFor="email">
+              <label className="mb-2 text-gray-700" htmlFor="email">
                 Email
               </label>
               <input
@@ -99,12 +99,12 @@ const ContactForm = () => {
                 name="email"
                 value={formData.email}
                 onChange={handleChange}
-                className="border border-gray-300 p-2 rounded w-full"
+                className="border border-gray-300 p-2 rounded w-full focus:outline-none focus:ring-2 focus:ring-sky-600"
                 required
               />
             </div>
             <div className="flex flex-col">
-              <label className="mb-2" htmlFor="telefono">
+              <label className="mb-2 text-gray-700" htmlFor="telefono">
                 Teléfono Celular
               </label>
               <input
@@ -113,12 +113,12 @@ const ContactForm = () => {
                 name="telefono"
                 value={formData.telefono}
                 onChange={handleChange}
-                className="border border-gray-300 p-2 rounded"
+                className="border border-gray-300 p-2 rounded focus:outline-none focus:ring-2 focus:ring-sky-600"
                 required
               />
             </div>
             <div className="flex flex-col">
-              <label className="mb-2" htmlFor="provincia">
+              <label className="mb-2 text-gray-700" htmlFor="provincia">
                 Provincia
               </label>
               <select
@@ -126,7 +126,7 @@ const ContactForm = () => {
                 name="provincia"
                 value={formData.provincia}
                 onChange={handleChange}
-                className="border border-gray-300 p-2 rounded"
+                className="border border-gray-300 p-2 rounded focus:outline-none focus:ring-2 focus:ring-sky-600"
                 required
               >
                 <option value="">Seleccione una provincia</option>
@@ -140,7 +140,7 @@ const ContactForm = () => {
             <div className="col-span-1 md:col-span-2 flex justify-end">
               <button
                 type="submit"
-                className="bg-teal-600 text-white px-4 py-2 rounded hover:bg-teal-700 transition-colors duration-200"
+                className="bg-sky-600 text-white px-4 py-2 rounded hover:bg-sky-700 transition-colors duration-200"
               >
                 Consultar
               </button>
