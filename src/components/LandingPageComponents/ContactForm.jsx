@@ -14,7 +14,6 @@ const OrderForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Aquí puedes manejar el envío del formulario
   };
 
   return (
@@ -25,7 +24,7 @@ const OrderForm = () => {
           <label className="block text-gray-700">Nombre y Apellido</label>
           <input
             type="text"
-            className="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-sky-600"
+            className="w-full p-2 border border-gray-300  focus:outline-none focus:ring-2 focus:ring-sky-600"
             value={nombre}
             onChange={(e) => setNombre(e.target.value)}
           />
@@ -35,7 +34,7 @@ const OrderForm = () => {
             <label className="block text-gray-700">D.N.I.</label>
             <input
               type="text"
-              className="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-sky-600"
+              className="w-full p-2 border border-gray-300  focus:outline-none focus:ring-2 focus:ring-sky-600"
               value={dni}
               onChange={(e) => setDni(e.target.value)}
             />
@@ -44,7 +43,7 @@ const OrderForm = () => {
             <label className="block text-gray-700">Teléfono con código de área y número</label>
             <input
               type="text"
-              className="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-sky-600"
+              className="w-full p-2 border border-gray-300  focus:outline-none focus:ring-2 focus:ring-sky-600"
               value={telefono}
               onChange={(e) => setTelefono(e.target.value)}
             />
@@ -54,7 +53,7 @@ const OrderForm = () => {
           <label className="block text-gray-700">Email</label>
           <input
             type="email"
-            className="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-sky-600"
+            className="w-full p-2 border border-gray-300  focus:outline-none focus:ring-2 focus:ring-sky-600"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
@@ -62,27 +61,27 @@ const OrderForm = () => {
         <div className="mb-4">
           <label className="block text-gray-700">Sede</label>
           <select
-            className="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-sky-600"
+            className="w-full p-2 border border-gray-300  focus:outline-none focus:ring-2 focus:ring-sky-600"
             value={sede}
             onChange={(e) => setSede(e.target.value)}
           >
             <option value="">Seleccionar Sede</option>
-            <option value="Villa Luzuriaga">Villa Luzuriaga</option>
-            <option value="Lomas del Mirador">Lomas del Mirador</option>
+            <option value="Villa Luzuriaga">San Justo</option>
+            <option value="Lomas del Mirador">Caballito</option>
           </select>
         </div>
         <div className="flex w-full">
           <div className="mb-4 w-10/12 pe-7">
             <label className="block text-gray-700">Describa aquí su consulta</label>
             <textarea
-              className="w-full p-2 border resize-none border-gray-300 h-20 focus:outline-none focus:ring-2 focus:ring-sky-600 h-full"
+              className="w-full p-2 border resize-none border-gray-300 h-20 focus:outline-none focus:ring-2 focus:ring-sky-600 "
               value={consulta}
               onChange={(e) => setConsulta(e.target.value)}
             ></textarea>
           </div>
           <div className="mb-4 w-2/12 flex flex-col items-center ">
             <label className="block text-gray-700">Adjuntar Orden</label>
-            <div className="relative h-full w-full border border-gray-300 hover:border-sky-700  h-20  box-border p-2 flex items-center justify-center">
+            <div className="relative w-full border border-gray-300 hover:border-sky-700 h-20 box-border p-2 flex items-center justify-center">
               <input
                 type="file"
                 className="absolute inset-0 w-full h-full opacity-0 cursor-pointer"
@@ -97,14 +96,14 @@ const OrderForm = () => {
         <div className="mb-4">
           <label className="block text-gray-700">Mensaje</label>
           <textarea
-            className="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-sky-600"
+            className="w-full p-2 border resize-none border-gray-300  focus:outline-none focus:ring-2 focus:ring-sky-600"
             value={mensaje}
             onChange={(e) => setMensaje(e.target.value)}
           ></textarea>
         </div>
         <button
           type="submit"
-          className="w-full bg-sky-600  text-white p-2 rounded hover:bg-sky-700 transition-colors duration-200"
+          className="w-full bg-sky-600  text-white p-2  hover:bg-sky-700 transition-colors duration-200"
         >
           ENVIAR
         </button>

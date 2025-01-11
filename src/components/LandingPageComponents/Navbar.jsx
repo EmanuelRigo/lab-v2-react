@@ -23,13 +23,13 @@ const Navbar = () => {
               <div className="flex items-center">
                 <FaMapMarkerAlt />
                 <span className="px-1">
-                  <p className="border-b border-sky-600 hover:border-white">Palermo</p>
+                  <p className="border-b border-sky-600 hover:border-white">San Justo</p>
                 </span>
               </div>
               <div className="px-3 flex items-center">
                 <FaMapMarkerAlt />
                 <span className="px-1">
-                  <p className="border-b border-sky-600 hover:border-white">San telmo</p>
+                  <p className="border-b border-sky-600 hover:border-white">Caballito</p>
                 </span>
               </div>
             </div>

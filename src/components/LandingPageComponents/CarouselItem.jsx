@@ -20,11 +20,11 @@ const CarouselItem = ({ image, title, description, caption }) => {
               
               <button className="bg-sky-600 text-white px-4 py-2 flex items-center hover:bg-sky-700 transition-colors duration-200">
                 <FaWhatsapp className="mr-2" />
-                SEDE PALERMO
+                SAN JUSTO
               </button>
               <button className="bg-sky-600 text-white px-4 py-2 flex items-center hover:bg-sky-700 transition-colors duration-200">
                 <FaWhatsapp className="mr-2" />
-                SEDE SAN TELMO
+                CABALLITO
               </button>
             </div>
           </div>
