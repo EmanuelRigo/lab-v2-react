@@ -7,10 +7,10 @@ import Banner from '@/components/LandingPageComponents/Banner';
 
 const Page = () => {
   return (
-    <div className='flex flex-col min-h-screen w-full items-center'>
+    <div className='flex flex-col min-h-screen w-full items-center w-full'>
       <Navbar />
       <Banner img={'/image2.avif'} section={'CONTACTO'} />
-      <div className='container'>
+      <div className='container '>
         <ContactForm />
       </div>
       <SocialFooter />

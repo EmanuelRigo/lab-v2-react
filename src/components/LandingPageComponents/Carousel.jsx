@@ -9,15 +9,15 @@ const Carousel = () => {
   const items = [
     {
       image: '/image1.jpg',
-      title: 'Título 1',
-      description: 'Esta es la descripción para la imagen 1',
-      caption: 'Esta es la leyenda para la imagen 1',
+      title: 'Las Extracciones se realizan sin turno previo',
+      description: '¿Tenés dudas o consultas? Escribinos a cualquiera de las sedes',
+
     },
     {
       image: '/image2.avif',
-      title: 'Título 2',
-      description: 'Esta es la descripción para la imagen 2',
-      caption: 'Esta es la leyenda para la imagen 2',
+      title: 'Envianos tu orden por WhatsApp',
+      description: 'Te contestamos a la brevedad con la preparación y los requisitos de tu obra social o presupuesto.',
+      caption: 'MANDANOS UNA FOTO DE TU ORDEN',
     },
     {
       image: '/image3.jpg',
