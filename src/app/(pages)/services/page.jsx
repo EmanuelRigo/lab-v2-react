@@ -8,15 +8,12 @@ import Banner from "@/components/LandingPageComponents/Banner";
 
 const Page = () => {
   return (
-    <div className="flex flex-col min-h-screen w-full items-center">
-      <Navbar />
+    <div className="flex-grow w-full flex flex-col items-center">
       <Banner img={"/image3.jpg"} section={"SERVICIOS"}></Banner>
       <div className="container">
         <ServicesInfo></ServicesInfo>
         <ServicesComponent />
       </div>
-      <SocialFooter />
-      <Footer />
     </div>
   );
 };

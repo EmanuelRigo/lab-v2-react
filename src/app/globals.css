@@ -43,3 +43,20 @@
 .scrollbar-custom::-webkit-scrollbar-thumb:hover {
   background: rgba(255, 255, 255, 0.7);
 }
+
+
+
+
+/* BANNER */
+@keyframes slide-in {
+  0% {
+    transform: translateX(-100%) skewX(20deg);
+  }
+  100% {
+    transform: translateX(0) skewX(20deg);
+  }
+}
+
+.animate-slide-in {
+  animation: slide-in 0.5s ease-out forwards;
+}

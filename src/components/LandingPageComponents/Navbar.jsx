@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { FaUserLock, FaMapMarkerAlt, FaFacebook, FaInstagram } from "react-icons/fa";
 import { usePathname } from 'next/navigation';
@@ -7,6 +7,8 @@ import { usePathname } from 'next/navigation';
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const pathname = usePathname();
+  console.log("🚀 ~ Navbar ~ pathname:", pathname)
+  console.log(typeof pathname)
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -14,8 +16,8 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="bg-white fixed top-0 w-full z-50 shadow-md ">
-        <div className="bg-sky-600 text-white py-3 ">
+      <nav className="bg-white fixed top-0 w-full z-50 shadow-md">
+        <div className="bg-sky-600 text-white py-3">
           <div className="container-fluid mx-auto flex justify-between space-x-4">
             <div className="flex px-4">
               <div className="flex items-center">
@@ -32,10 +34,10 @@ const Navbar = () => {
               </div>
             </div>
             <div className="flex items-center pe-4">
-              <div className="px-2 mx-1 border border-sky-500 transition-colors duration-300 bg-sky-500 hover:bg-sky-700  py-2">
-                <FaFacebook className="text-white " />
+              <div className="px-2 mx-1 border border-sky-500 transition-colors duration-300 bg-sky-500 hover:bg-sky-700 py-2">
+                <FaFacebook className="text-white" />
               </div>
-              <div className="px-2 border border-sky-500 hover:bg-sky-700  bg-sky-500  transition-colors duration-300 py-2">
+              <div className="px-2 border border-sky-500 hover:bg-sky-700 bg-sky-500 transition-colors duration-300 py-2">
                 <FaInstagram className="text-white transition-colors duration-300" />
               </div>
             </div>
@@ -48,28 +50,28 @@ const Navbar = () => {
           </Link>
 
           {/* Links */}
-          <div className="hidden md:flex h-full space-x-6  items-center">
+          <div className="hidden md:flex h-full space-x-6 items-center">
             <Link
               href="/"
-              className={`text-gray-600 hover:text-sky-500 transition-colors duration-200 ${pathname === '/' ? 'text-blue-500' : ''}`}
+              className={`text-gray-600 hover:text-sky-500 transition-colors duration-200 ${pathname === '/' ? 'text-sky-500' : ''}`}
             >
               Home
             </Link>
             <Link
               href="/services"
-              className={`text-gray-600 hover:text-sky-500 transition-colors duration-200 ${pathname === '/services' ? 'text-blue-500' : ''}`}
+              className={`text-gray-600 hover:text-sky-500 transition-colors duration-200 ${pathname === '/services' ? 'text-sky-500' : ''}`}
             >
               Servicios
             </Link>
             <Link
               href="/coverage"
-              className="text-gray-600 hover:text-sky-500 transition-colors duration-200"
+              className={`text-gray-600 hover:text-sky-500 transition-colors duration-200 ${pathname === '/coverage' ? 'text-sky-500' : ''}`}
             >
               Cobertura
             </Link>
             <Link
               href="/contact"
-              className="text-gray-600 hover:text-sky-500 transition-colors duration-200"
+              className={`text-gray-600 hover:text-sky-500 transition-colors duration-200 ${pathname === '/contact' ? 'text-sky-500' : ''}`}
             >
               Contacto
             </Link>
