@@ -61,7 +61,7 @@ const MedicalCoverageArgentina = () => {
   return (
     <>
       <Banner img={"/image4.jpg"} section={"COVERTURA"}/>
-      <div className="flex-grow w-full flex flex-col items-center">
+      <div className="flex-grow w-full flex flex-col items-center mt-10 container">
         <h1 className="text-3xl font-bold text-sky-600 mb-6 text-center">
           Coberturas Médicas en Argentina
         </h1>
