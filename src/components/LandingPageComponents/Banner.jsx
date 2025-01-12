@@ -22,11 +22,7 @@ const Banner = ({ section, img }) => {
               HOME
             </Link>
           </li>
-          <li className="relative">
-            <span className="before:content-['|'] before:absolute before:-left-2 before:text-white before:pr-2">
-              {section}
-            </span>
-          </li>
+         
         </ul>
       </div>
     </div>

@@ -43,7 +43,7 @@ const Navbar = () => {
             </div>
           </div>
         </div>
-        <div className="container-fluid h-28 mx-auto flex justify-between items-center">
+        <div className="container-fluid h-28 mx-auto flex justify-between items-center text-xl">
           {/* Logo */}
           <Link href="/" className="text-sky-600 text-2xl font-bold ml-4">
             LabClinico
@@ -77,7 +77,7 @@ const Navbar = () => {
             </Link>
             <Link
               href="/envia-tu-orden"
-              className="flex text-white hover:bg-sky-700 hover:text-white transition-colors duration-100 bg-sky-500 h-full ml-auto items-center px-4"
+              className="flex justify-center text-white hover:bg-sky-700 w-[230px] hover:text-white transition-colors duration-100 bg-sky-500 h-full ml-auto items-center px-4"
             >
               Envia tu orden
             </Link>
