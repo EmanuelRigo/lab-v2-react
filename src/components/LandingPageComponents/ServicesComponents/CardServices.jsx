@@ -1,36 +1,38 @@
-import React from "react";
+import React, { useEffect } from "react";
 
-const CardServices = () => {
+const CardServices = ({ service }) => {
+  useEffect(() => {
+    const elements = document.querySelectorAll(".animate-fade-in-card");
+    elements.forEach((element) => {
+      element.classList.remove("animate-fade-in-card");
+      void element.offsetWidth; // Trigger reflow
+      element.classList.add("animate-fade-in-card");
+    });
+  }, [service]);
+
   return (
-
-   <>
-      <div className="w-full md:w-2/6 px-6 flex min-h-[350px] items-center justify-center">
+    <div className="flex gap-6 md:w-4/6 px-6 min-h-[350px] animate-fade-in-card">
+      <div className="w-3/6 flex min-h-[350px] items-center justify-center">
         <img
-          src="/image4.jpg"
-          alt="Lab Work"
-          className="object-cover h-full w-full"
+          src={service.img}
+          alt={service.title}
+          className="object-cover h-full w-full animate-fade-in-card"
         />
       </div>
-      <div className="w-full md:w-2/6 flex flex-col justify-between">
+      <div className="flex flex-col justify-between w-3/6 animate-fade-in-card">
         <div>
           <h3 className="text-xl font-semibold text-gray-700 m-0 mb-2">
-            Asesoramiento Bioquímico
+            {service.title}
           </h3>
-          <ul className="list-disc list-inside text-gray-600 ps-4">
-            <li>Autoimmunidad</li>
-            <li>Bacteriología</li>
-            <li>Biología molecular</li>
-            <li>Citogenética</li>
-            <li>Drogas terapéuticas</li>
-            <li>Endocrinología</li>
-            <li>Hematología</li>
-            <li>Hemostasia y trombosis</li>
-            <li>Inmunoserología</li>
-            <li>Marcadores tumorales</li>
-            <li>Metabolismo</li>
-            <li>Proteínas</li>
-            <li>Química clínica</li>
-          </ul>
+          <p className="text-gray-600">{service.description}</p>
+
+          {service.ul && service.ul.length > 0 && (
+            <ul className="list-disc list-inside text-gray-600 ps-4 mt-2">
+              {service.ul.map((feature, index) => (
+                <li key={index}>{feature}</li>
+              ))}
+            </ul>
+          )}
         </div>
         <div className="mt-4 flex justify-start">
           <button className="p-6 py-5 bg-sky-600 text-white hover:bg-sky-700 transition-colors duration-200">
@@ -38,7 +40,7 @@ const CardServices = () => {
           </button>
         </div>
       </div>
-      </>
+    </div>
   );
 };
 
