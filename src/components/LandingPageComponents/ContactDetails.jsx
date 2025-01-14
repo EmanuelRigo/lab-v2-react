@@ -4,7 +4,7 @@ import { FaWhatsapp, FaPhone, FaMapMarkerAlt, FaClock } from "react-icons/fa"; /
 
 const ContactDetails = () => {
   return (
-    <div className="p-6 bg-white rounded-lg">
+    <div className="p-6 bg-white">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div>
           <Image
@@ -12,7 +12,7 @@ const ContactDetails = () => {
             alt="Descripción de la imagen ficticia"
             width={500} // Ajusta el ancho según sea necesario
             height={300} // Ajusta la altura según sea necesario
-            className="rounded-lg h-full object-cover" // Mantener la proporción
+            className=" h-full object-cover" // Mantener la proporción
           />
         </div>
         <div>
@@ -105,7 +105,7 @@ const ContactDetails = () => {
           </div>
 
           <div className="mt-6 flex justify-start">
-            <button className="px-4 py-2 bg-sky-600 text-white rounded-lg">
+            <button className="px-4 py-2 bg-sky-600 text-white">
               NUESTROS SERVICIOS FICTICIOS
             </button>
           </div>
