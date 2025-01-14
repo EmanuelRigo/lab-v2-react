@@ -1,6 +1,6 @@
 import React from "react";
 import Navbar from "@/components/LandingPageComponents/Navbar";
-import ContactForm from "@/components/LandingPageComponents/ContactForm";
+import ContactForm from "@/components/LandingPageComponents/ContactComponents/ContactForm";
 import SocialFooter from "@/components/LandingPageComponents/SocialFooter";
 import Footer from "@/components/LandingPageComponents/Footer";
 import Banner from "@/components/LandingPageComponents/Banner";
@@ -27,12 +27,14 @@ const labData = [
 
 const Page = () => {
   return (
-    <div className="flex-grow w-full flex flex-col items-center">
+    <div className="flex-grow w-full flex flex-col items-center ">
       <Banner img={"/image2.avif"} section={"CONTACTO"} />
       <div className="container flex justify-center gap-7 items-center ">
-      {labData.map((lab, index) => ( <LaboratoryInfo key={index} {...lab} /> ))}
-        
-      </div><ContactForm />
+        {labData.map((lab, index) => (
+          <LaboratoryInfo key={index} {...lab} />
+        ))}
+      </div>
+      <ContactForm />
     </div>
   );
 };
