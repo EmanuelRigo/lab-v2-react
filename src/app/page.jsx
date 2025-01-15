@@ -9,6 +9,7 @@ import React from "react";
 import Navbar from "../components/LandingPageComponents/Navbar";
 import Footer from "../components/LandingPageComponents/Footer";
 import SocialFooter from "../components/LandingPageComponents/SocialFooter";
+import Maps from "../components/LandingPageComponents/Maps";
 import Main from "../components/LandingPageComponents/Main";
 import { usePathname } from "next/navigation";
 
@@ -23,6 +24,7 @@ const Page = () => {
       </header>
       <Main></Main>
       <footer className="w-full">
+        <Maps />
         <SocialFooter />
         <Footer />
       </footer>
