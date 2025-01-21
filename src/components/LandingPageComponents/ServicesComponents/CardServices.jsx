@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import Image from "next/image";
 
 const CardServices = ({ service }) => {
   useEffect(() => {
@@ -12,11 +13,13 @@ const CardServices = ({ service }) => {
 
   return (
     <div className="flex gap-6 md:w-4/6 px-6 min-h-[350px] animate-fade-in-card">
-      <div className="w-3/6 flex min-h-[350px] items-center justify-center">
-        <img
+      <div className="w-3/6 flex min-h-[350px] items-center justify-center relative">
+        <Image
           src={service.img}
           alt={service.title}
-          className="object-cover h-full w-full animate-fade-in-card"
+          layout="fill"
+          objectFit="cover"
+          className="animate-fade-in-card"
         />
       </div>
       <div className="flex flex-col justify-between w-3/6 animate-fade-in-card">

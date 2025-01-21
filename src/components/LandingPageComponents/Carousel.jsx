@@ -48,7 +48,7 @@ const Carousel = () => {
   }, [currentIndex]);
 
   return (
-    <div className="relative w-full h-[50vh] mx-auto z-30">
+    <div className="relative w-full h-[75vh] md:h-[50vh] mx-auto z-30">
       <div className="overflow-hidden relative w-full h-full">
         {items.map((item, index) => (
           <div

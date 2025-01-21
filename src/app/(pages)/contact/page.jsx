@@ -6,6 +6,13 @@ import Footer from "@/components/LandingPageComponents/Footer";
 import Banner from "@/components/LandingPageComponents/Banner";
 import LaboratoryInfo from "@/components/LandingPageComponents/ContactComponents/LaboratoryInfo";
 
+
+export const metadata = {
+  title: "Contactos - Laboratorio Clinico",
+  description: "laboratorio clinico - pagina principal",
+  keywords: "laboratorio clinico, examenes de laboratorio",
+};
+
 const labData = [
   {
     name: "Sede Villa Luzuriaga",
