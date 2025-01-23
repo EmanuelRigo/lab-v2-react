@@ -12,8 +12,8 @@ const CardServices = ({ service }) => {
   }, [service]);
 
   return (
-    <div className="flex gap-6 md:w-4/6 px-6 min-h-[350px] animate-fade-in-card">
-      <div className="w-3/6 flex min-h-[350px] items-center justify-center relative">
+    <div className="flex flex-col md:flex-row gap-6 md:w-4/6 md:px-6 min-h-[350px] animate-fade-in-card mt-6 md:mt-0 w-full">
+      <div className="w-full md:w-3/6 flex min-h-32 md:min-h-[350px] items-center justify-center relative">
         <Image
           src={service.img}
           alt={service.title}
@@ -22,7 +22,7 @@ const CardServices = ({ service }) => {
           className="animate-fade-in-card"
         />
       </div>
-      <div className="flex flex-col justify-between w-3/6 animate-fade-in-card">
+      <div className="flex flex-col justify-between w-full md:w-3/6 animate-fade-in-card ">
         <div>
           <h3 className="text-xl font-semibold text-gray-700 m-0 mb-2">
             {service.title}
@@ -37,8 +37,8 @@ const CardServices = ({ service }) => {
             </ul>
           )}
         </div>
-        <div className="mt-4 flex justify-start">
-          <button className="p-6 py-5 bg-sky-600 text-white hover:bg-sky-700 transition-colors duration-200">
+        <div className="mt-4 flex justify-start ">
+          <button className="p-6 py-5 w-full md:w-auto bg-sky-600 text-white hover:bg-sky-700 transition-colors duration-200">
             CONTACTANOS
           </button>
         </div>

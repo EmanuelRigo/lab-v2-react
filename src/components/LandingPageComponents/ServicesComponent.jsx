@@ -17,7 +17,7 @@ const ServicesComponent = () => {
 
   return (
     <div className="py-16 rounded-lg">
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         <div className="text-center">
           <div className="flex items-center justify-center mb-2">
             <LuFlaskConical className="h-32 w-32 my-8 text-sky-600" />
