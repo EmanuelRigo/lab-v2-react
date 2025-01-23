@@ -13,7 +13,7 @@ const CardServices = ({ service }) => {
 
   return (
     <div className="flex flex-col md:flex-row gap-6 md:w-4/6 md:px-6 min-h-[350px] animate-fade-in-card mt-6 md:mt-0 w-full">
-      <div className="w-full md:w-3/6 flex min-h-32 md:min-h-[350px] items-center justify-center relative">
+      <div className="w-full md:w-3/6 flex min-h-28 md:min-h-[350px] items-center justify-center relative">
         <Image
           src={service.img}
           alt={service.title}

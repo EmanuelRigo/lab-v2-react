@@ -17,7 +17,7 @@ const Page = () => {
   console.log("🚀 ~ Page ~  pathname :", pathname);
 
   return (
-    <Main>s</Main>
+    <Main></Main>
   );
 };
 

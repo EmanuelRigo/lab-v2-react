@@ -1,6 +1,7 @@
 "use client"
 import React, { useState } from "react";
 import { FaHospital, FaStethoscope, FaHeartbeat } from "react-icons/fa";
+import MedicalCoverageItem from "./MedicalCoverageItem";
 
 const MedicalCoverageList = () => {
   const coberturas = [
@@ -66,20 +67,9 @@ const MedicalCoverageList = () => {
         value={search}
         onChange={(e) => setSearch(e.target.value)}
       />
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {filteredCoberturas.map((cobertura, index) => (
-          <div
-            key={index}
-            className="bg-gray-100 p-6 hover:bg-gray-200 transition-colors duration-200"
-          >
-            <div className="flex items-center mb-4">
-              <div className="text-sky-600 text-3xl">{cobertura.icono}</div>
-              <h3 className="text-xl font-semibold text-gray-700 ml-4">
-                {cobertura.nombre}
-              </h3>
-            </div>
-            <p className="text-gray-600">{cobertura.descripcion}</p>
-          </div>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6  w-full">
+        {filteredCoberturas.map((coverage, index) => (
+          <MedicalCoverageItem key={index} coverage={coverage}></MedicalCoverageItem>
         ))}
       </div>
     </div>
