@@ -11,7 +11,7 @@ const LaboratoryInfo = ({
   extractionHours,
 }) => {
   return (
-    <div className=" w-1/2 overflow-hidden my-5 bg-gray-100">
+    <div className=" w-5/6 md:w-1/2 overflow-hidden my-5 bg-gray-100">
       <div className="p-6">
         <h2 className="font-bold text-2xl mb-3 text-sky-600">{name}</h2>
         <p className="text-gray-700 text-base flex items-center">

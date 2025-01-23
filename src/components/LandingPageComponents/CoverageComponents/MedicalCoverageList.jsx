@@ -67,7 +67,7 @@ const MedicalCoverageList = () => {
         value={search}
         onChange={(e) => setSearch(e.target.value)}
       />
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6  w-full">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-6  w-full">
         {filteredCoberturas.map((coverage, index) => (
           <MedicalCoverageItem key={index} coverage={coverage}></MedicalCoverageItem>
         ))}
