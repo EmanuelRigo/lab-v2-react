@@ -6,6 +6,13 @@ import Footer from "@/components/LandingPageComponents/Footer";
 import Banner from "@/components/LandingPageComponents/Banner";
 import LaboratoryInfo from "@/components/LandingPageComponents/ContactComponents/LaboratoryInfo";
 
+
+export const metadata = {
+  title: "Contactos - Laboratorio Clinico",
+  description: "laboratorio clinico - pagina principal",
+  keywords: "laboratorio clinico, examenes de laboratorio",
+};
+
 const labData = [
   {
     name: "Sede Villa Luzuriaga",
@@ -27,14 +34,15 @@ const labData = [
 
 const Page = () => {
   return (
-    <div className="flex-grow w-full flex flex-col items-center ">
-      <Banner img={"/image2.avif"} section={"CONTACTO"} />
-      <div className="container flex justify-center gap-7 items-center ">
+    <div className="flex-grow w-full flex flex-col items-center "><Banner img={"/image2.avif"} section={"CONTACTO"} />
+      <div className="container">
+      
+      <div className="flex flex-col md:flex-row  justify-center gap-7 items-center ">
         {labData.map((lab, index) => (
           <LaboratoryInfo key={index} {...lab} />
-        ))}
+        ))}  
       </div>
-      <ContactForm />
+    <ContactForm /></div>
     </div>
   );
 };

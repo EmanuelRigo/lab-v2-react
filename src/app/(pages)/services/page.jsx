@@ -6,6 +6,12 @@ import Footer from "@/components/LandingPageComponents/Footer";
 import ServicesInfo from "@/components/LandingPageComponents/ServicesComponents/ServicesInfo";
 import Banner from "@/components/LandingPageComponents/Banner";
 
+export const metadata = {
+  title: "Servicios - Laboratorio Clinico",
+  description: "laboratorio clinico - pagina principal",
+  keywords: "laboratorio clinico, examenes de laboratorio",
+};
+
 const Page = () => {
   return (
     <div className="flex-grow w-full flex flex-col items-center">
