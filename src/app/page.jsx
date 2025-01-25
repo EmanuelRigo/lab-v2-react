@@ -18,17 +18,7 @@ const Page = () => {
   console.log("🚀 ~ Page ~  pathname :", pathname);
 
   return (
-    <div className="flex flex-col min-h-screen items-center">
-      <header className="w-full">
-        <Navbar />
-      </header>
-      <Main></Main>
-      <footer className="w-full">
-        <Maps />
-        <SocialFooter />
-        <Footer />
-      </footer>
-    </div>
+    <Main></Main>
   );
 };
 
