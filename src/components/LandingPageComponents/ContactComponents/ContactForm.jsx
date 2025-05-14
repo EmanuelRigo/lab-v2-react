@@ -17,7 +17,7 @@ const OrderForm = () => {
   };
 
   return (
-    <div className="mx-auto p-6 bg-white md:w-5/6 sm:p-4">
+    <div className="mx-auto p-6 bg-white md:w-full p-4 md:p-0 my-6">
       <h1 className="text-2xl font-bold mb-4 text-sky-600 sm:text-xl sm:mb-2">Enviar Orden</h1>
       <form onSubmit={handleSubmit}>
         <div className="mb-4 sm:mb-2">
