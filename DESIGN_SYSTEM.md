@@ -698,3 +698,12 @@ El design system de `/` es un dashboard de administración con una identidad vis
 - src/components/LandingPageComponents/ContactDetails.jsx
 - src/components/LandingPageComponents/Carousel.jsx
 - src/components/LandingPageComponents/CarouselItem.jsx
+- src/components/LandingPageComponents/SocialFooter.jsx
+- src/components/LandingPageComponents/Footer.jsx
+- src/app/(pages)/services/page.jsx
+- src/components/LandingPageComponents/ServicesComponents/ServicesInfo.jsx
+- src/components/LandingPageComponents/ServicesComponents/CardServices.jsx
+- src/components/LandingPageComponents/Banner.jsx
+
+
+

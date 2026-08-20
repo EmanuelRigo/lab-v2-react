@@ -1,12 +1,22 @@
-"use client"
+// @style-migration: approved — no refactorizar estilo (Design System aplicado el 2026-08-20)
+"use client";
 import React, { useState } from "react";
-import { FaMicroscope, FaVial, FaHome, FaChild } from "react-icons/fa";
+import {
+  LuFlaskConical,
+  LuClipboardList,
+  LuHouse,
+  LuCircleUser,
+} from "react-icons/lu";
 import CardServices from "./CardServices";
 
 const data = [
   {
+    id: "asesoramiento",
     img: "/image1.jpg",
     title: "Asesoramiento Bioquímico",
+    Icon: LuFlaskConical,
+    description:
+      "Brindamos asesoramiento bioquímico especializado y análisis de alta complejidad con diagnósticos de precisión para respaldar las decisiones médicas.",
     ul: [
       "Autoinmunidad",
       "Bacteriología",
@@ -22,57 +32,117 @@ const data = [
       "Proteínas",
       "Química clínica",
     ],
-    description:
-      "Brindamos asesoramiento bioquímico para los siguientes estudios:",
   },
   {
+    id: "atencion",
     img: "/image2.avif",
     title: "Atención Bioquímica",
-    description: "This is the description for the second item.",
+    Icon: LuClipboardList,
+    description:
+      "Atención personalizada por profesionales calificados en nuestras sedes, garantizando confort, estricta confidencialidad y rapidez en la toma de muestras.",
+    ul: [
+      "Atención por orden de llegada o turno previo",
+      "Asesoramiento pre-analítico detallado",
+      "Validación bioquimica de resultados en 24h",
+      "Acceso digital seguro a informes de laboratorio",
+    ],
   },
   {
+    id: "domicilio",
     img: "/image3.jpg",
     title: "Extracciones a Domicilio",
-    description: "This is the description for the third item.",
+    Icon: LuHouse,
+    description:
+      "Servicio de toma de muestras en la comodidad de su hogar u oficina con el mismo rigor técnico, puntualidad y cumplimiento de protocolos de bioseguridad.",
+    ul: [
+      "Coordinación previa por WhatsApp o teléfono",
+      "Equipamiento portátil homologado",
+      "Ideal para pacientes con movilidad reducida",
+      "Conservación de muestras con cadena de frío garantizada",
+    ],
   },
   {
+    id: "pediatria",
     img: "/image4.jpg",
     title: "Extracción Pediátrica",
-    description: "This is the description for the fourth item.",
+    Icon: LuCircleUser,
+    description:
+      "Espacio adaptado y equipo profesional altamente experimentado en la contención e interacción amigable y libre de estrés con niños y lactantes.",
+    ul: [
+      "Técnicas de venopunción de mínimo impacto",
+      "Personal con especialización pediátrica",
+      "Entorno distendido y contenedor",
+      "Entrega de diploma de valentía a los pacientes",
+    ],
   },
 ];
 
 const ServicesInfo = () => {
-  const [selectedService, setSelectedService] = useState(data[0]); // Estado para el servicio seleccionado
+  const [selectedService, setSelectedService] = useState(data[0]);
 
   return (
-    <div className="bg-white p-6 px-9">
-      <h2 className="text-2xl font-bold text-sky-600 mb-4">
-        Nuestros Servicios
-      </h2>
-      <div className="flex w-full flex-wrap">
-        <div className="w-full md:w-2/6 flex flex-col gap-6">
-          {data.map((service, index) => (
-            <button
-              key={index}
-              className="text-center flex items-center bg-gray-200 p-5 px-6 w-full group hover:bg-gray-300 transition-colors duration-500 focus:bg-sky-600"
-              onClick={() => setSelectedService(service)} // Actualiza el servicio seleccionado al hacer clic
-            >
-              {index === 0 && <FaMicroscope className="h-16 mx-0 w-16 text-sky-600 group-focus:text-white" />}
-              {index === 1 && <FaVial className="h-16 mx-0 w-16 text-sky-600 group-focus:text-white" />}
-              {index === 2 && <FaHome className="h-16 mx-0 w-16 text-sky-600 group-focus:text-white" />}
-              {index === 3 && <FaChild className="h-16 mx-0 w-16 text-sky-600 group-focus:text-white" />}
-              <h3 className="text-xl font-semibold m-0 ms-4 text-gray-700 group-focus:text-white">
-                {service.title}
-              </h3>
-            </button>
-          ))}
-        </div>
-        <CardServices service={selectedService} /> {/* Pasar el servicio seleccionado a CardServices */}
+    <section className="bg-surface border border-border rounded-2xl p-6 sm:p-8 space-y-6">
+      <div>
+        <span className="text-[11px] font-semibold uppercase tracking-wider text-primary-600 bg-primary-50 px-2.5 py-1 rounded-md border border-primary-200/50 inline-block mb-1.5">
+          Explora nuestra oferta
+        </span>
+        <h2 className="text-2xl sm:text-3xl font-bold text-text-primary">
+          Catálogo Integral de Servicios
+        </h2>
+        <p className="text-sm text-text-secondary mt-1">
+          Selecciona cada servicio para conocer los detalles técnicos y especialidades comprendidas.
+        </p>
       </div>
 
-    </div>
+      <div className="flex flex-col lg:flex-row gap-6 w-full items-start">
+        {/* Selector de servicios */}
+        <div className="w-full lg:w-2/5 flex flex-col gap-3">
+          {data.map((service) => {
+            const isSelected = selectedService.id === service.id;
+            const Icon = service.Icon;
+
+            return (
+              <button
+                key={service.id}
+                type="button"
+                onClick={() => setSelectedService(service)}
+                className={`flex items-center gap-4 p-4 rounded-xl border text-left transition-all duration-150 group cursor-pointer ${
+                  isSelected
+                    ? "bg-primary-50 border-primary-200 text-primary-600 shadow-xs"
+                    : "bg-surface border-border text-text-primary hover:border-border-strong hover:bg-surface-muted"
+                }`}
+              >
+                <div
+                  className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-xl border transition-colors ${
+                    isSelected
+                      ? "border-primary-200/60 bg-white text-primary-600"
+                      : "border-primary-200/50 bg-primary-50 text-primary-600 group-hover:bg-primary-100"
+                  }`}
+                >
+                  <Icon className="h-6 w-6" aria-hidden="true" />
+                </div>
+                <div>
+                  <h3
+                    className={`text-base font-semibold transition-colors ${
+                      isSelected ? "text-primary-600" : "text-text-primary"
+                    }`}
+                  >
+                    {service.title}
+                  </h3>
+                  <p className="text-xs text-text-muted line-clamp-1 mt-0.5">
+                    {service.description}
+                  </p>
+                </div>
+              </button>
+            );
+          })}
+        </div>
+
+        {/* Detalle del servicio seleccionado */}
+        <CardServices service={selectedService} />
+      </div>
+    </section>
   );
 };
 
-export default ServicesInfo;
+export default ServicesInfo;

@@ -69,16 +69,19 @@
 /* BANNER */
 @keyframes slide-in {
   0% {
-    transform: translateX(-100%) skewX(20deg);
+    transform: translateX(-100%) skewX(-12deg);
+    opacity: 0;
   }
   100% {
-    transform: translateX(0) skewX(20deg);
+    transform: translateX(0) skewX(-12deg);
+    opacity: 1;
   }
 }
 
 .animate-slide-in {
-  animation: slide-in 0.5s ease-out forwards;
+  animation: slide-in 0.65s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
+
 
 
 /* CARD */
