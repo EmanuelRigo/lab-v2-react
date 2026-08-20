@@ -79,9 +79,18 @@ Los valores más relevantes observados en el diseño de `/` son:
 - Border strong: `#cbd5e1`
   - CSS variable: `--border-strong`
   - Uso: hover state y separación más visible
-- Primary base: `#3a7ca5`
-  - CSS variable: `--primary`
-  - Uso: acción principal, gráfico, texto principal de marca, enlaces
+- Primary base: `#0056e0`
+  - CSS variable: `--primary`, `--primary-500`
+  - Uso: acción principal, CTA, gráficos, acentos de marca
+- Primary soft: `#eef4ff`
+  - CSS variable: `--primary-50`
+  - Uso: fondos suaves de acento, estados hover, contenedores de icono
+- Primary border: `#b3d1ff`
+  - CSS variable: `--primary-200`
+  - Uso: bordes sutiles sobre fondos primary-50
+- Primary emphasis: `#0047b8`
+  - CSS variable: `--primary-600`
+  - Uso: texto e iconos sobre fondos claros, hover de CTA
 - Primary foreground: `#ffffff`
   - CSS variable: `--primary-foreground`
   - Uso: texto sobre fondo primario
@@ -90,7 +99,7 @@ Los valores más relevantes observados en el diseño de `/` son:
 
 Observada en `globals.css` y en los componentes del dashboard:
 
-- Primary: `#3a7ca5` (base) / `#0056e0` (clase `primary-500` usado por la variante default de botón y estados)
+- Primary: `#0056e0` (base / `primary-500`) con escala suave `primary-50`, `primary-200`, `primary-600`
 - Success: `#22c55e`
 - Warning: `#f59e0b`
 - Danger: `#ef4444`
@@ -519,7 +528,10 @@ Estas no rompen la identidad general del sistema; son pequeñas variaciones de c
 - text-muted: `#64748b`
 - border: `#e2e8f0`
 - border-strong: `#cbd5e1`
-- primary: `#3a7ca5`
+- primary: `#0056e0`
+- primary-50: `#eef4ff`
+- primary-200: `#b3d1ff`
+- primary-600: `#0047b8`
 - success: `#22c55e`
 - warning: `#f59e0b`
 - danger: `#ef4444`
@@ -591,10 +603,12 @@ Las nuevas páginas que quieran integrarse a la misma identidad visual deben res
 
 ### Navbar
 
-- fondo neutro o `surface`
-- borde inferior suave
-- texto pequeño y claro
-- acciones de CTA compactas
+- fondo neutro o `surface` / `primary-50` muy suave
+- borde inferior suave (`border-border`)
+- chips de ubicación con patrón tipo card: `rounded-lg border border-border bg-surface`
+- iconos en contenedor `rounded-md border border-primary-200/50 bg-primary-50 text-primary-600`
+- hover con `hover:border-border-strong` y transición `duration-150`
+- acciones de CTA compactas en `bg-primary-500` con hover `bg-primary-600`
 - no hero nav heavy ni de marketing brillante
 
 ### Hero
@@ -676,3 +690,11 @@ Las nuevas páginas que quieran integrarse a la misma identidad visual deben res
 ## Conclusión
 
 El design system de `/` es un dashboard de administración con una identidad visual de producto SaaS ligera, clara, compacta y funcional. Su fuerza está en los bordes, el espacio, la jerarquía tipográfica y el uso disciplinado de una paleta primaria azul + semántica de estado, sin depender de sombras ni efectos visuales decorativos.
+
+## Archivos con estilo aprobado (no refactorizar)
+
+- src/components/LandingPageComponents/Main.jsx
+- src/components/LandingPageComponents/ServicesComponent.jsx
+- src/components/LandingPageComponents/ContactDetails.jsx
+- src/components/LandingPageComponents/Carousel.jsx
+- src/components/LandingPageComponents/CarouselItem.jsx

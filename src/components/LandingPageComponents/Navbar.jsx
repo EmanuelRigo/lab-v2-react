@@ -1,48 +1,51 @@
 "use client";
-import Link from "next/link";
-import {
-  FaUserLock,
-  FaMapMarkerAlt,
-  FaFacebook,
-  FaInstagram,
-} from "react-icons/fa";
+
+import { FaMapMarkerAlt, FaFacebook, FaInstagram } from "react-icons/fa";
+
+const locationClassName =
+  "flex items-center gap-2.5 rounded-lg border border-border bg-surface px-2 py-1.5 transition-all duration-150 hover:border-border-strong";
+
+const iconWrapperClassName =
+  "flex h-7 w-7 items-center justify-center rounded-md border border-primary-200/50 bg-primary-50 text-primary-600";
 
 const Navbar = () => {
   return (
-    <>
-      <div className="bg-white w-full ">
-        <div className="bg-sky-600 h-16 text-white py-3 flex items-center w-full">
-          <div className="mx-auto flex justify-between space-x-4 w-full">
-            <div className="flex px-4">
-              <div className="flex items-center">
-                <FaMapMarkerAlt />
-                <span className="px-1">
-                  <p className="border-b border-sky-600 hover:border-white">
-                    San Justo
-                  </p>
-                </span>
-              </div>
-              <div className="px-3 flex items-center">
-                <FaMapMarkerAlt />
-                <span className="px-1">
-                  <p className="border-b border-sky-600 hover:border-white">
-                    Caballito
-                  </p>
-                </span>
-              </div>
+    <div className="w-full border-b border-border bg-primary-50/60">
+      <div className="mx-auto flex h-11 w-full max-w-[1560px] items-center justify-between gap-3 px-4">
+        <div className="flex items-center gap-2">
+          <div className={locationClassName}>
+            <div className={iconWrapperClassName}>
+              <FaMapMarkerAlt className="h-3.5 w-3.5" aria-hidden="true" />
             </div>
-            <div className="flex items-center pe-4">
-              <div className="px-2 mx-1 border border-sky-500 transition-colors duration-300 bg-sky-500 hover:bg-sky-700 py-2">
-                <FaFacebook className="text-white" />
-              </div>
-              <div className="px-2 border border-sky-500 hover:bg-sky-700 bg-sky-500 transition-colors duration-300 py-2">
-                <FaInstagram className="text-white transition-colors duration-300" />
-              </div>
+            <span className="text-xs font-semibold text-text-primary">San Justo</span>
+          </div>
+
+          <div className={locationClassName}>
+            <div className={iconWrapperClassName}>
+              <FaMapMarkerAlt className="h-3.5 w-3.5" aria-hidden="true" />
             </div>
+            <span className="text-xs font-semibold text-text-primary">Caballito</span>
           </div>
         </div>
+
+        <div className="flex items-center gap-2">
+          <a
+            href="#"
+            aria-label="Facebook"
+            className={`${iconWrapperClassName} transition-all duration-150 hover:border-primary-300 hover:bg-primary-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500/30`}
+          >
+            <FaFacebook className="h-3.5 w-3.5" />
+          </a>
+          <a
+            href="#"
+            aria-label="Instagram"
+            className={`${iconWrapperClassName} transition-all duration-150 hover:border-primary-300 hover:bg-primary-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500/30`}
+          >
+            <FaInstagram className="h-3.5 w-3.5" />
+          </a>
+        </div>
       </div>
-    </>
+    </div>
   );
 };
 

@@ -1,114 +1,113 @@
-import React from "react";
+// @style-migration: approved — no refactorizar estilo (Design System aplicado el 2026-08-20)
 import Image from "next/image";
-import { FaWhatsapp, FaPhone, FaMapMarkerAlt, FaClock } from "react-icons/fa"; // Importar los íconos necesarios
+import Link from "next/link";
+import { FaWhatsapp, FaPhone, FaMapMarkerAlt, FaClock } from "react-icons/fa";
+
+const iconWrapperClassName =
+  "mr-2 flex h-7 w-7 shrink-0 items-center justify-center rounded-md border border-primary-200/50 bg-primary-50 text-primary-600";
+
+const InfoRow = ({ icon: Icon, children }) => (
+  <p className="flex items-center text-sm text-text-secondary">
+    <span className={iconWrapperClassName}>
+      <Icon className="h-3.5 w-3.5" aria-hidden="true" />
+    </span>
+    {children}
+  </p>
+);
+
+const LocationBlock = ({ title, address, phone, whatsapp, adminHours, extractionHours }) => (
+  <div className="rounded-xl border border-border bg-surface-muted/40 p-4 transition-all duration-150 hover:border-border-strong">
+    <h3 className="text-sm font-semibold text-primary-600">{title}</h3>
+
+    <div className="mt-3 space-y-2">
+      <InfoRow icon={FaMapMarkerAlt}>{address}</InfoRow>
+      <InfoRow icon={FaPhone}>Teléfono: {phone}</InfoRow>
+      <InfoRow icon={FaWhatsapp}>WhatsApp directo: {whatsapp}</InfoRow>
+    </div>
+
+    <div className="mt-4 space-y-3">
+      <div>
+        <p className="flex items-center text-sm font-semibold text-text-primary">
+          <span className={iconWrapperClassName}>
+            <FaClock className="h-3.5 w-3.5" aria-hidden="true" />
+          </span>
+          Horario administrativo
+        </p>
+        <div className="mt-1 space-y-0.5 pl-9 text-sm text-text-secondary">
+          {adminHours.map((hour) => (
+            <p key={hour}>{hour}</p>
+          ))}
+        </div>
+      </div>
+
+      <div>
+        <p className="flex items-center text-sm font-semibold text-text-primary">
+          <span className={iconWrapperClassName}>
+            <FaClock className="h-3.5 w-3.5" aria-hidden="true" />
+          </span>
+          Horario de extracciones
+        </p>
+        <p className="mt-1 pl-9 text-sm text-text-secondary">{extractionHours}</p>
+      </div>
+    </div>
+  </div>
+);
 
 const ContactDetails = () => {
   return (
-    <div className="p-6 bg-white">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <div>
+    <div className="p-6 md:p-8">
+      <div className="grid grid-cols-1 gap-6 md:grid-cols-2 md:gap-8">
+        <div className="overflow-hidden rounded-xl border border-border">
           <Image
-            src="/image4.jpg" // Cambia esto por la ruta de tu imagen ficticia
-            alt="Descripción de la imagen ficticia"
-            width={500} // Ajusta el ancho según sea necesario
-            height={300} // Ajusta la altura según sea necesario
-            className=" h-full object-cover" // Mantener la proporción
+            src="/image4.jpg"
+            alt="Instalaciones del laboratorio clínico"
+            width={500}
+            height={300}
+            className="h-full min-h-[240px] w-full object-cover"
           />
         </div>
-        <div>
-          <h2 className="text-2xl font-bold text-sky-600">
-            Diagnóstico Ficticio Integral
-          </h2>
-          <p className="mt-2 text-gray-600">
-            Envíanos por WhatsApp tu orden para brindarte una atención
-            personalizada.
-          </p>
 
-          <div className="mt-4">
-            <h3 className="text-xl font-semibold text-sky-600">
-              Sede Ficticia 1
-            </h3>
-            <p className="mt-1 text-gray-600 flex items-center">
-              <FaMapMarkerAlt className="mr-2 text-sky-600" />{" "}
-              {/* Icono de ubicación */}
-              Calle Ficticia 1234
+        <div className="flex flex-col gap-4">
+          <div>
+            <h2 className="text-xl font-semibold text-text-primary">
+              Diagnóstico integral
+            </h2>
+            <p className="mt-2 text-sm text-text-secondary">
+              Enviá tu orden por WhatsApp para recibir atención personalizada,
+              preparación del estudio y requisitos de tu cobertura.
             </p>
-            <p className="text-gray-600 flex items-center">
-              <FaPhone className="mr-2 text-sky-600" />{" "}
-              {/* Icono de teléfono */}
-              Teléfono: 11 1234 5678
-            </p>
-            <p className="text-gray-600 flex items-center">
-              <FaWhatsapp className="mr-2 text-sky-600" />{" "}
-              {/* Icono de WhatsApp */}
-              WhatsApp Directo: 11 9876 5432
-            </p>
-            <div className="mt-2">
-              <p className="font-semibold text-gray-700 flex items-center">
-                <FaClock className="mr-2 text-sky-600" /> {/* Icono de reloj */}
-                Horario administrativo:
-              </p>
-              <p className="text-gray-600">
-                Lunes a Viernes de 8:00 a 17:00hs.
-              </p>
-              <p className="text-gray-600">Sábados de 8:00 a 13:00hs.</p>
-            </div>
-            <div className="mt-2">
-              <p className="font-semibold text-gray-700 flex items-center">
-                <FaClock className="mr-2 text-sky-600" /> {/* Icono de reloj */}
-                Horario de extracciones:
-              </p>
-              <p className="text-gray-600">
-                Lunes a Sábados de 8:00 a 11:30hs.
-              </p>
-            </div>
           </div>
 
-          <div className="mt-6">
-            <h3 className="text-xl font-semibold text-sky-600">
-              Sede Ficticia 2
-            </h3>
-            <p className="mt-1 text-gray-600 flex items-center">
-              <FaMapMarkerAlt className="mr-2 text-sky-600" />{" "}
-              {/* Icono de ubicación */}
-              Avenida Ficticia 5678
-            </p>
-            <p className="text-gray-600 flex items-center">
-              <FaPhone className="mr-2 text-sky-600" />{" "}
-              {/* Icono de teléfono */}
-              Teléfono: 11 8765 4321
-            </p>
-            <p className="text-gray-600 flex items-center">
-              <FaWhatsapp className="mr-2 text-sky-600" />{" "}
-              {/* Icono de WhatsApp */}
-              WhatsApp Directo: 11 6543 2109
-            </p>
-            <div className="mt-2">
-              <p className="font-semibold text-gray-700 flex items-center">
-                <FaClock className="mr-2 text-sky-600" /> {/* Icono de reloj */}
-                Horario administrativo:
-              </p>
-              <p className="text-gray-600">
-                Lunes a Viernes de 9:00 a 18:00hs.
-              </p>
-              <p className="text-gray-600">Sábados de 9:00 a 14:00hs.</p>
-            </div>
-            <div className="mt-2">
-              <p className="font-semibold text-gray-700 flex items-center">
-                <FaClock className="mr-2 text-sky-600" /> {/* Icono de reloj */}
-                Horario de extracciones:
-              </p>
-              <p className="text-gray-600">
-                Lunes a Sábados de 9:00 a 12:30hs.
-              </p>
-            </div>
-          </div>
+          <LocationBlock
+            title="Sede San Justo"
+            address="Calle Ficticia 1234"
+            phone="11 1234 5678"
+            whatsapp="11 9876 5432"
+            adminHours={[
+              "Lunes a viernes de 8:00 a 17:00 hs.",
+              "Sábados de 8:00 a 13:00 hs.",
+            ]}
+            extractionHours="Lunes a sábados de 8:00 a 11:30 hs."
+          />
 
-          <div className="mt-6 flex justify-start">
-            <button className="px-4 py-2 bg-sky-600 text-white">
-              NUESTROS SERVICIOS FICTICIOS
-            </button>
-          </div>
+          <LocationBlock
+            title="Sede Caballito"
+            address="Avenida Ficticia 5678"
+            phone="11 8765 4321"
+            whatsapp="11 6543 2109"
+            adminHours={[
+              "Lunes a viernes de 9:00 a 18:00 hs.",
+              "Sábados de 9:00 a 14:00 hs.",
+            ]}
+            extractionHours="Lunes a sábados de 9:00 a 12:30 hs."
+          />
+
+          <Link
+            href="/services"
+            className="mt-2 inline-flex w-fit rounded-md border border-primary-500 bg-primary-500 px-4 py-2 text-sm font-medium text-primary-foreground transition-all duration-150 hover:border-primary-600 hover:bg-primary-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500/30"
+          >
+            Ver nuestros servicios
+          </Link>
         </div>
       </div>
     </div>

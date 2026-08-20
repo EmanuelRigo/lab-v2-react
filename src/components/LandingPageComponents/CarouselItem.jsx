@@ -1,35 +1,61 @@
-import React from "react";
-import { FaWhatsapp } from "react-icons/fa";
+// @style-migration: approved — no refactorizar estilo (Design System aplicado el 2026-08-20)
 import Image from "next/image";
+import { FaWhatsapp } from "react-icons/fa";
 
-const CarouselItem = ({ image, title, description, caption }) => {
+const whatsappButtonClassName =
+  "inline-flex items-center justify-center gap-2 rounded-md border border-primary-foreground/20 bg-primary-foreground px-4 py-2 text-sm font-semibold text-primary-600 transition-all duration-150 hover:bg-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-foreground/40";
+
+const CarouselItem = ({
+  image,
+  title,
+  description,
+  caption,
+  locations = ["San Justo", "Caballito"],
+}) => {
   return (
-    <div className="relative w-full h-full overflow-hidden">
+    <div className="relative h-full w-full overflow-hidden">
       <Image
         src={image}
-        alt="Carousel Item"
-        layout="fill"
-        objectFit="cover"
-        className="w-full h-full"
+        alt={title}
+        fill
+        className="object-cover"
+        priority
       />
-      <div className="absolute inset-0 flex justify-center md:justify-start items-center">
-        <div className="relative w-full md:w-1/2 h-full flex flex-col md:flex-row items-center md:items-start">
-          <div className="absolute inset-0 bg-sky-900 bg-opacity-70 transform md:skew-x-12 w-full md:w-[150%] md:-left-1/4"></div>
-          <div className="relative w-full text-white p-4 md:ps-28 flex flex-col justify-center items-center md:items-start h-full">
-            <h2 className="text-2xl md:text-4xl font-bold mb-4 text-center md:text-left">{title}</h2>
-            <p className="text-lg font-semibold text-center md:text-left">{caption}</p>
-            <p className="mb-9 text-center md:text-left">{description}</p>
-            <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4">
-              <button className="bg-sky-600 text-white px-4 py-2 flex items-center justify-center hover:bg-sky-700 transition-colors duration-200">
-                <FaWhatsapp className="mr-2" />
-                SAN JUSTO
-              </button>
-              <button className="bg-sky-600 text-white px-4 py-2 flex items-center justify-center hover:bg-sky-700 transition-colors duration-200">
-                <FaWhatsapp className="mr-2" />
-                CABALLITO
-              </button>
+
+      {/* Overlay más oscuro y sólido para mejorar el contraste del texto */}
+      <div className="absolute inset-0 bg-slate-900/80 md:bg-slate-900/70" />
+      <div className="absolute inset-0 bg-gradient-to-r from-slate-900/85 via-slate-900/70 to-slate-900/30" />
+
+      <div className="absolute inset-0 flex items-center justify-center p-6 md:justify-start md:px-16 md:py-20 lg:px-28">
+        <div className="relative flex max-w-xl flex-col items-center text-white md:items-start">
+          {caption && (
+            <span className="mb-3 inline-flex items-center rounded-md border border-primary-foreground/30 bg-primary-500/20 px-3 py-1 text-xs font-semibold tracking-wide text-white md:mb-4">
+              {caption}
+            </span>
+          )}
+
+          <h2 className="text-center text-2xl font-bold leading-tight tracking-tight text-white drop-shadow-sm md:text-left md:text-4xl lg:text-5xl">
+            {title}
+          </h2>
+
+          <p className="mt-4 max-w-md text-center text-base font-medium leading-relaxed text-white md:text-left md:text-lg">
+            {description}
+          </p>
+
+          {locations?.length > 0 && (
+            <div className="mt-8 flex w-full flex-col gap-3 sm:flex-row sm:gap-4">
+              {locations.map((location) => (
+                <button
+                  key={location}
+                  type="button"
+                  className={whatsappButtonClassName}
+                >
+                  <FaWhatsapp aria-hidden="true" />
+                  {location}
+                </button>
+              ))}
             </div>
-          </div>
+          )}
         </div>
       </div>
     </div>

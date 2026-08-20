@@ -24,16 +24,20 @@ const geistMono = localFont({
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="es">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-background text-text-primary`}
       >
-        <div className="flex flex-col min-h-screen items-center">
-          <header className="w-full ">
+        <div className="flex min-h-screen flex-col">
+          <header className="sticky top-0 z-50 w-full border-b border-border bg-surface shadow-none">
             <Navbar />
+            <NabbarButtons />
           </header>
-          <NabbarButtons></NabbarButtons>
-          {children} {/* Contenido principal de la aplicación */}
+
+          <main className="flex w-full flex-1 flex-col items-center">
+            {children}
+          </main>
+
           <footer className="w-full">
             <SocialFooter />
             <Footer />
