@@ -90,13 +90,14 @@ const ServicesInfo = () => {
           Catálogo Integral de Servicios
         </h2>
         <p className="text-sm text-text-secondary mt-1">
-          Selecciona cada servicio para conocer los detalles técnicos y especialidades comprendidas.
+          Selecciona cada servicio para conocer los detalles técnicos y
+          especialidades comprendidas.
         </p>
       </div>
 
-      <div className="flex flex-col lg:flex-row gap-6 w-full items-start">
+      <div className="relative flex w-full flex-col gap-6  lg:block">
         {/* Selector de servicios */}
-        <div className="w-full lg:w-2/5 flex flex-col gap-3">
+        <div className="flex w-full flex-col gap-3 lg:w-2/5">
           {data.map((service) => {
             const isSelected = selectedService.id === service.id;
             const Icon = service.Icon;
@@ -138,11 +139,13 @@ const ServicesInfo = () => {
           })}
         </div>
 
-        {/* Detalle del servicio seleccionado */}
-        <CardServices service={selectedService} />
+        {/* El detalle se independiza de la altura del selector en escritorio. */}
+        <div className="w-full lg:absolute lg:inset-y-0 lg:left-[calc(40%+1.5rem)] lg:w-[calc(60%-1.5rem)] lg:overflow-y-auto lg:[&>div]:w-full">
+          <CardServices service={selectedService} />
+        </div>
       </div>
     </section>
   );
 };
 
-export default ServicesInfo;
+export default ServicesInfo;

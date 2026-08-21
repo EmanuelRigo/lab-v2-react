@@ -3,7 +3,7 @@
 import { FaMapMarkerAlt, FaFacebook, FaInstagram } from "react-icons/fa";
 
 const locationClassName =
-  "flex items-center gap-2.5 rounded-lg border border-border bg-surface px-2 py-1.5 transition-all duration-150 hover:border-border-strong";
+  "flex items-center gap-2.5 rounded-lg px-2 py-1.5 transition-all duration-150 hover:border-border-strong";
 
 const iconWrapperClassName =
   "flex h-7 w-7 items-center justify-center rounded-md border border-primary-200/50 bg-primary-50 text-primary-600";
@@ -17,14 +17,18 @@ const Navbar = () => {
             <div className={iconWrapperClassName}>
               <FaMapMarkerAlt className="h-3.5 w-3.5" aria-hidden="true" />
             </div>
-            <span className="text-xs font-semibold text-text-primary">San Justo</span>
+            <span className="text-xs font-semibold text-text-primary">
+              San Justo
+            </span>
           </div>
 
           <div className={locationClassName}>
             <div className={iconWrapperClassName}>
               <FaMapMarkerAlt className="h-3.5 w-3.5" aria-hidden="true" />
             </div>
-            <span className="text-xs font-semibold text-text-primary">Caballito</span>
+            <span className="text-xs font-semibold text-text-primary">
+              Caballito
+            </span>
           </div>
         </div>
 

@@ -15,11 +15,8 @@ import { usePathname } from "next/navigation";
 
 const Page = () => {
   const pathname = usePathname();
-  console.log("🚀 ~ Page ~  pathname :", pathname);
 
-  return (
-    <Main></Main>
-  );
+  return <Main></Main>;
 };
 
 export default Page;
