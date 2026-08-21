@@ -704,6 +704,12 @@ El design system de `/` es un dashboard de administración con una identidad vis
 - src/components/LandingPageComponents/ServicesComponents/ServicesInfo.jsx
 - src/components/LandingPageComponents/ServicesComponents/CardServices.jsx
 - src/components/LandingPageComponents/Banner.jsx
+- src/app/(pages)/coverage/page.jsx
+- src/components/LandingPageComponents/CoverageComponents/MedicalCoverageList.jsx
+- src/components/LandingPageComponents/CoverageComponents/MedicalCoverageItem.jsx
+- src/app/(pages)/contact/page.jsx
+- src/components/LandingPageComponents/ContactComponents/LaboratoryInfo.jsx
+- src/components/LandingPageComponents/ContactComponents/ContactForm.jsx
 
 
 

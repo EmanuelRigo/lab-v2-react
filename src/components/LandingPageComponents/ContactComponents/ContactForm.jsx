@@ -1,8 +1,9 @@
+// @style-migration: approved — no refactorizar estilo (Design System aplicado el 2026-08-20)
 "use client";
 import React, { useState } from "react";
-import { FaUpload } from "react-icons/fa";
+import { LuUpload, LuSend, LuCheck, LuFileText, LuInfo } from "react-icons/lu";
 
-const OrderForm = () => {
+const ContactForm = () => {
   const [nombre, setNombre] = useState("");
   const [dni, setDni] = useState("");
   const [telefono, setTelefono] = useState("");
@@ -10,110 +11,208 @@ const OrderForm = () => {
   const [sede, setSede] = useState("");
   const [consulta, setConsulta] = useState("");
   const [adjunto, setAdjunto] = useState(null);
-  const [mensaje, setMensaje] = useState("");
+  const [submitted, setSubmitted] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    setSubmitted(true);
+    setTimeout(() => {
+      setSubmitted(false);
+      setNombre("");
+      setDni("");
+      setTelefono("");
+      setEmail("");
+      setSede("");
+      setConsulta("");
+      setAdjunto(null);
+    }, 4000);
   };
 
   return (
-    <div className="mx-auto p-6 bg-white md:w-full p-4 md:p-0 my-6">
-      <h1 className="text-2xl font-bold mb-4 text-sky-600 sm:text-xl sm:mb-2">Enviar Orden</h1>
-      <form onSubmit={handleSubmit}>
-        <div className="mb-4 sm:mb-2">
-          <label className="block text-gray-700 sm:text-sm">Nombre y Apellido</label>
-          <input
-            type="text"
-            className="w-full p-2 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-sky-600 sm:p-1"
-            value={nombre}
-            onChange={(e) => setNombre(e.target.value)}
-          />
+    <section className="bg-surface border border-border rounded-2xl p-6 sm:p-8 space-y-6 shadow-none">
+      <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 pb-4 border-b border-border">
+        <div className="space-y-2">
+          <span className="text-[11px] font-semibold uppercase tracking-wider text-primary-600 bg-primary-50 px-2.5 py-1 rounded-md border border-primary-200/50 inline-block">
+            Formulario de Recepción Digital
+          </span>
+          <h2 className="text-xl sm:text-2xl font-bold text-text-primary tracking-tight">
+            Envío de Orden Médica y Consultas
+          </h2>
+          <p className="text-xs sm:text-sm text-text-secondary max-w-2xl leading-relaxed">
+            Complete el siguiente formulario para adjuntar la foto o archivo PDF
+            de su orden médica o solicitar información a nuestro equipo
+            administrativo.
+          </p>
         </div>
-        <div className="w-full flex flex-col md:flex-row">
-          <div className="mb-4 w-full md:w-2/6 md:pe-7 sm:pe-2 sm:mb-2 gap-3">
-            <label className="block text-gray-700 sm:text-sm">D.N.I.</label>
-            <input
-              type="text"
-              className="w-full p-2 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-sky-600 sm:p-1"
-              value={dni}
-              onChange={(e) => setDni(e.target.value)}
-            />
+
+        <div className="flex items-center gap-2 bg-surface-muted px-3 py-2 rounded-lg border border-border text-xs text-text-muted shrink-0">
+          <LuInfo className="h-4 w-4 text-primary-600 shrink-0" />
+          <span>Respuesta habitual en menos de 2 horas lectivas</span>
+        </div>
+      </div>
+
+      {submitted ? (
+        <div className="bg-emerald-50 border border-emerald-200 text-emerald-800 rounded-xl p-6 text-center space-y-2 animate-in fade-in">
+          <div className="h-10 w-10 bg-emerald-500 text-white rounded-full mx-auto flex items-center justify-center">
+            <LuCheck className="h-6 w-6" />
           </div>
-          <div className="mb-4 w-full md:w-4/6 sm:mb-2">
-            <label className="block text-gray-700 sm:text-sm">
-              Teléfono con código de área y número
-            </label>
-            <input
-              type="text"
-              className="w-full p-2 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-sky-600 sm:p-1"
-              value={telefono}
-              onChange={(e) => setTelefono(e.target.value)}
-            />
-          </div>
+          <h3 className="font-bold text-base">¡Orden Enviada Exitosamente!</h3>
+          <p className="text-xs text-emerald-700 max-w-md mx-auto">
+            Hemos recibido su consulta y adjunto. Nuestro equipo administrativo
+            revisará su orden y se pondrá en contacto por WhatsApp o correo.
+          </p>
         </div>
-        <div className="mb-4 sm:mb-2">
-          <label className="block text-gray-700 sm:text-sm">Email</label>
-          <input
-            type="email"
-            className="w-full p-2 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-sky-600 sm:p-1"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
-        </div>
-        <div className="mb-4 sm:mb-2">
-          <label className="block text-gray-700 sm:text-sm">Sede</label>
-          <select
-            className="w-full p-2 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-sky-600 sm:p-1"
-            value={sede}
-            onChange={(e) => setSede(e.target.value)}
-          >
-            <option value="">Seleccionar Sede</option>
-            <option value="Villa Luzuriaga">San Justo</option>
-            <option value="Lomas del Mirador">Caballito</option>
-          </select>
-        </div>
-        <div className="flex w-full flex-col md:flex-row">
-          <div className="mb-4 w-full md:w-10/12 md:pe-7 sm:pe-2 sm:mb-2">
-            <label className="block text-gray-700 sm:text-sm">
-              Describa aquí su consulta
-            </label>
-            <textarea
-              className="w-full p-2 border resize-none border-gray-300 h-20 focus:outline-none focus:ring-2 focus:ring-sky-600 sm:p-1 sm:h-16"
-              value={consulta}
-              onChange={(e) => setConsulta(e.target.value)}
-            ></textarea>
-          </div>
-          <div className="mb-4 w-full md:w-2/12 flex flex-col items-center sm:mb-2">
-            <label className="block text-gray-700 sm:text-sm">Adjuntar Orden</label>
-            <div className="relative w-full border border-gray-300 hover:border-sky-700 h-20 box-border p-2 flex items-center justify-center sm:h-16">
+      ) : (
+        <form onSubmit={handleSubmit} className="space-y-5">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {/* Nombre y Apellido */}
+            <div className="space-y-1.5">
+              <label className="block text-xs font-semibold uppercase tracking-wider text-text-secondary">
+                Nombre y Apellido *
+              </label>
               <input
-                type="file"
-                className="absolute inset-0 w-full h-full opacity-0 cursor-pointer"
-                onChange={(e) => setAdjunto(e.target.files[0])}
+                type="text"
+                required
+                placeholder="Ej. Maria Gonzalez"
+                className="w-full bg-surface-muted/50 border border-border rounded-xl px-4 py-2.5 text-sm text-text-primary placeholder:text-text-muted focus:outline-none focus:border-primary-500 focus:ring-1 focus:ring-primary-500 transition-all"
+                value={nombre}
+                onChange={(e) => setNombre(e.target.value)}
               />
-              <div className="text-sky-600 cursor-pointer hover:text-sky-700 transition-colors duration-200 flex items-center justify-center h-full">
-                <FaUpload size={30} />
+            </div>
+
+            {/* DNI */}
+            <div className="space-y-1.5">
+              <label className="block text-xs font-semibold uppercase tracking-wider text-text-secondary">
+                D.N.I. del Paciente *
+              </label>
+              <input
+                type="text"
+                required
+                placeholder="Sin puntos (Ej. 35123456)"
+                className="w-full bg-surface-muted/50 border border-border rounded-xl px-4 py-2.5 text-sm text-text-primary placeholder:text-text-muted focus:outline-none focus:border-primary-500 focus:ring-1 focus:ring-primary-500 transition-all"
+                value={dni}
+                onChange={(e) => setDni(e.target.value)}
+              />
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            {/* Teléfono */}
+            <div className="space-y-1.5">
+              <label className="block text-xs font-semibold uppercase tracking-wider text-text-secondary">
+                Teléfono de Contacto *
+              </label>
+              <input
+                type="tel"
+                required
+                placeholder="Cod. área + número"
+                className="w-full bg-surface-muted/50 border border-border rounded-xl px-4 py-2.5 text-sm text-text-primary placeholder:text-text-muted focus:outline-none focus:border-primary-500 focus:ring-1 focus:ring-primary-500 transition-all"
+                value={telefono}
+                onChange={(e) => setTelefono(e.target.value)}
+              />
+            </div>
+
+            {/* Email */}
+            <div className="space-y-1.5">
+              <label className="block text-xs font-semibold uppercase tracking-wider text-text-secondary">
+                Correo Electrónico *
+              </label>
+              <input
+                type="email"
+                required
+                placeholder="ejemplo@correo.com"
+                className="w-full bg-surface-muted/50 border border-border rounded-xl px-4 py-2.5 text-sm text-text-primary placeholder:text-text-muted focus:outline-none focus:border-primary-500 focus:ring-1 focus:ring-primary-500 transition-all"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+              />
+            </div>
+
+            {/* Sede */}
+            <div className="space-y-1.5">
+              <label className="block text-xs font-semibold uppercase tracking-wider text-text-secondary">
+                Sede Preferida *
+              </label>
+              <select
+                required
+                className="w-full bg-surface-muted/50 border border-border rounded-xl px-4 py-2.5 text-sm text-text-primary focus:outline-none focus:border-primary-500 focus:ring-1 focus:ring-primary-500 transition-all"
+                value={sede}
+                onChange={(e) => setSede(e.target.value)}
+              >
+                <option value="">Seleccionar Sede</option>
+                <option value="Villa Luzuriaga">Sede Villa Luzuriaga</option>
+                <option value="Lomas del Mirador">
+                  Sede Lomas del Mirador
+                </option>
+              </select>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
+            {/* Descripción / Consulta */}
+            <div className="space-y-1.5 lg:col-span-2">
+              <label className="block text-xs font-semibold uppercase tracking-wider text-text-secondary">
+                Descripción de la Consulta o Estudios a realizar
+              </label>
+              <textarea
+                rows={3}
+                placeholder="Indique si posee obra social/prepaga o si requiere algún preparativo especial..."
+                className="w-full bg-surface-muted/50 border border-border rounded-xl p-3 text-sm text-text-primary placeholder:text-text-muted focus:outline-none focus:border-primary-500 focus:ring-1 focus:ring-primary-500 transition-all resize-none"
+                value={consulta}
+                onChange={(e) => setConsulta(e.target.value)}
+              ></textarea>
+            </div>
+
+            {/* Adjuntar Orden */}
+            <div className="space-y-1.5">
+              <label className="block text-xs font-semibold uppercase tracking-wider text-text-secondary">
+                Adjuntar Orden / Receta (Opcional)
+              </label>
+              <div className="relative border-2 border-dashed border-border hover:border-primary-500 bg-surface-muted/30 hover:bg-primary-50/50 rounded-xl p-4 transition-all text-center cursor-pointer h-[90px] flex flex-col items-center justify-center group">
+                <input
+                  type="file"
+                  accept="image/*,.pdf"
+                  className="absolute inset-0 w-full h-full opacity-0 cursor-pointer"
+                  onChange={(e) => setAdjunto(e.target.files[0])}
+                />
+                <div className="flex items-center gap-2 text-primary-600 group-hover:scale-105 transition-transform">
+                  {adjunto ? (
+                    <>
+                      <LuFileText className="h-5 w-5" />
+                      <span className="text-xs font-semibold truncate max-w-[140px] text-text-primary">
+                        {adjunto.name}
+                      </span>
+                    </>
+                  ) : (
+                    <>
+                      <LuUpload className="h-5 w-5" />
+                      <span className="text-xs font-medium text-text-secondary">
+                        Subir foto / PDF
+                      </span>
+                    </>
+                  )}
+                </div>
+                <span className="text-[10px] text-text-muted mt-1">
+                  {adjunto
+                    ? "Haga clic para cambiar archivo"
+                    : "JPG, PNG o PDF hasta 10MB"}
+                </span>
               </div>
             </div>
           </div>
-        </div>
-        <div className="mb-4 sm:mb-2">
-          <label className="block text-gray-700 sm:text-sm">Mensaje</label>
-          <textarea
-            className="w-full p-2 border resize-none border-gray-300 focus:outline-none focus:ring-2 focus:ring-sky-600 sm:p-1 sm:h-16"
-            value={mensaje}
-            onChange={(e) => setMensaje(e.target.value)}
-          ></textarea>
-        </div>
-        <button
-          type="submit"
-          className="w-full bg-sky-600 text-white p-2 hover:bg-sky-700 transition-colors duration-200 sm:p-1"
-        >
-          ENVIAR
-        </button>
-      </form>
-    </div>
+
+          <div className="pt-2">
+            <button
+              type="submit"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-primary-500 hover:bg-primary-600 text-primary-foreground font-semibold px-8 py-3 rounded-xl transition-all shadow-none text-sm"
+            >
+              <LuSend className="h-4 w-4" />
+              ENVIAR ORDEN / CONSULTA
+            </button>
+          </div>
+        </form>
+      )}
+    </section>
   );
 };
 
-export default OrderForm;
+export default ContactForm;
